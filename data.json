@@ -1,0 +1,28 @@
+{
+  "dishes": [
+    {
+      "id": "salad",
+      "name": "Garden Fresh Salad",
+      "price": "$8.50",
+      "description": "Crisp mixed greens, cherry tomatoes, cucumbers, and a lemon-olive oil dressing.",
+      "image": "assets/dish1.svg",
+      "usdz": "assets/salad.usdz"
+    },
+    {
+      "id": "pizza",
+      "name": "Margherita Pizza",
+      "price": "$12.00",
+      "description": "Thin-crust pizza with fresh mozzarella, tomato sauce, and basil.",
+      "image": "assets/dish2.svg",
+      "usdz": "assets/pizza.usdz"
+    },
+    {
+      "id": "pasta",
+      "name": "Herbed Pasta",
+      "price": "$11.00",
+      "description": "Tagliatelle tossed with garlic, olive oil, herbs, and parmesan.",
+      "image": "assets/dish3.svg",
+      "usdz": "assets/pasta.usdz"
+    }
+  ]
+}
