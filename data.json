@@ -23,6 +23,14 @@
       "description": "Tagliatelle tossed with garlic, olive oil, herbs, and parmesan.",
       "image": "assets/dish3.svg",
       "usdz": "assets/pasta.usdz"
+    },
+    {
+      "id": "ete-en-provence",
+      "name": "\u00c9t\u00e9 en Provence",
+      "price": "$14.00",
+      "description": "A summer-inspired dish with Mediterranean herbs, sun-dried tomatoes, and fresh vegetables.",
+      "image": "assets/dish4.svg",
+      "usdz": "assets/ete-en-provence.usdz"
     }
   ]
 }
