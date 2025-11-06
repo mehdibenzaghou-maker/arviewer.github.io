@@ -1,72 +1,45 @@
-// Simple site script that loads data.json and renders the pages.
-// Designed to work on GitHub Pages (static files).
-async function fetchData(){
-  const res = await fetch('data.json');
-  return await res.json();
-}
+// Smooth scroll for anchors
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const target=document.querySelector(a.getAttribute('href'));
+    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+  })
+});
 
-function makeCard(dish){
-  const div = document.createElement('div');
-  div.className = 'card';
-  div.innerHTML = `
-    <img src="${dish.image}" alt="${dish.name}" />
-    <h3>${dish.name}</h3>
-    <p class="price">${dish.price}</p>
-    <a class="btn" href="dish.html?id=${encodeURIComponent(dish.id)}">View</a>
-  `;
-  return div;
-}
+// animate fade-up elements when in viewport
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); e.target.style.opacity=1; e.target.style.transform='none'; } });
+},{threshold:0.12});
+document.querySelectorAll('.fade-up').forEach(el=>{ obs.observe(el); el.style.transition='all .6s ease'; });
 
-function getQueryParam(name){
-  const url = new URL(location.href);
-  return url.searchParams.get(name);
-}
-
-async function renderIndex(){
-  const data = await fetchData();
-  const grid = document.getElementById('dishes-grid');
-  data.dishes.forEach(d => {
-    grid.appendChild(makeCard(d));
+// Reserve CTA behaviour
+document.querySelectorAll('.btn-primary').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const c=document.querySelector('#contact');
+    if(c){ c.scrollIntoView({behavior:'smooth'}); }
   });
-}
+});
 
-async function renderDish(){
-  const id = getQueryParam('id');
-  if(!id){
-    document.getElementById('dish-detail').innerHTML = '<p>Dish not found.</p>';
-    return;
-  }
-  const data = await fetchData();
-  const dish = data.dishes.find(x => x.id === id);
-  if(!dish){
-    document.getElementById('dish-detail').innerHTML = '<p>Dish not found.</p>';
-    return;
-  }
+// Model viewer: when user taps/clicks the element, open AR mode if available
+window.addEventListener('DOMContentLoaded',()=>{
+  const mv = document.getElementById('mv');
+  if(!mv) return;
 
-  const container = document.getElementById('dish-detail');
-  container.innerHTML = `
-    <div class="dish-header">
-      <img src="${dish.image}" alt="${dish.name}" />
-      <div class="dish-meta">
-        <h2>${dish.name}</h2>
-        <p class="price">${dish.price}</p>
-        <p class="dish-description">${dish.description}</p>
-        <p style="margin-top:12px;">
-          <a id="ar-btn" class="btn" href="${dish.usdz}" rel="ar">View in AR</a>
-        </p>
-        <p style="margin-top:10px;color:#6b7280">Tip: On iOS, tapping "View in AR" opens the USDZ in the AR Quick Look viewer.</p>
-      </div>
-    </div>
-  `;
-
-  // For iOS AR Quick Look, linking the .usdz file directly is sufficient.
-  // If you later host large .usdz files, keep them in /assets/ and update data.json accordingly.
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-  if(document.getElementById('dishes-grid')){
-    renderIndex();
-  } else if(document.getElementById('dish-detail')){
-    renderDish();
-  }
+  // On click/tap, request AR if supported
+  mv.addEventListener('click', async (ev) => {
+    try {
+      if (mv.canActivateAR) {
+        // model-viewer provides canActivateAR promise-ish behavior; call enterAR()
+        await mv.enterAR();
+      } else {
+        // fallback: try enterAR anyway (some builds support it)
+        if (typeof mv.enterAR === 'function') {
+          await mv.enterAR();
+        }
+      }
+    } catch (err) {
+      // ignore errors - user will still be able to rotate/zoom the model in browser
+      console.log('AR not available or blocked:', err);
+    }
+  });
 });
