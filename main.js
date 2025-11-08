@@ -1,0 +1,1 @@
+console.log('Le Cinq site loaded');
