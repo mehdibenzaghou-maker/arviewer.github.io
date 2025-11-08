@@ -1,102 +1,107 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Le Cinq — Accueil</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le Cinq — Restaurant Moderne</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
-<body class="page-light">
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <!-- round icon -->
-        <img src="assets/logo-round.svg" alt="Le Cinq logo" class="brand-icon">
-        <!-- integrated text logo -->
-        <div class="brand-text"><span class="word">Le</span><span class="space"></span><span class="five">5</span><span class="rest">Cinq</span></div>
-      </a>
-      <nav class="nav">
-        <a href="index.html" class="nav-link">Accueil</a>
-        <a href="menu.html" class="nav-link btn-ghost">Menu</a>
-      </nav>
-    </div>
-  </header>
+<body>
+<div class="wrap">
+<header>
+<div class="brand">
+<div class="logo">
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<circle cx="32" cy="32" r="30" fill="#ff6600"/>
+<text x="32" y="42" text-anchor="middle" fill="#fff" font-size="32" font-family="Arial, sans-serif" font-weight="bold">5</text>
+</svg>
+</div>
+<div>
+<h1>Le Cinq</h1>
+<div class="muted">Cuisine moderne & élégante</div>
+</div>
+</div>
+<nav>
+<a href="#menu">Menu</a>
+<a href="#about">À propos</a>
+<a href="#contact">Contact</a>
+<a href="#reserve" class="cta">Réserver</a>
+</nav>
+</header>
 
-  <main class="container">
-    <section class="hero fade-in">
-      <div class="hero-inner">
-        <h1 class="hero-title">Une cuisine moderne, une expérience mémorable</h1>
-        <p class="hero-sub">Découvrez nos plats en 3D et en réalité augmentée — élégant, simple, vivant.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="menu.html">Voir le menu</a>
-          <a class="btn btn-outline" href="#about">À propos</a>
-        </div>
-      </div>
-      <div class="hero-visual slide-up">
-        <model-viewer src="assets/placeholder.glb"
-                      ios-src="assets/placeholder.usdz"
-                      alt="Prototype plat 3D"
-                      ar
-                      ar-modes="webxr scene-viewer quick-look"
-                      environment-image="neutral"
-                      auto-rotate camera-controls
-                      style="width:100%;max-width:520px;height:320px;">
-        </model-viewer>
-      </div>
-    </section>
+<main>
+<section class="hero">
+<div class="hero-left">
+<h2 class="fade-up">Bienvenue chez <strong style="color:#ff6600">Le Cinq</strong></h2>
+<p class="lead">Un restaurant moderne offrant des plats créatifs et un cadre élégant.</p>
+<div class="hero-cta">
+<button class="btn btn-primary">Réserver une table</button>
+<button class="btn btn-ghost">Voir le menu</button>
+</div>
+</div>
+<aside class="hero-card">
+<svg width="100%" height="240" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" style="border-radius:10px;display:block">
+<defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0%" stop-color="#111"/><stop offset="100%" stop-color="#333"/></linearGradient></defs>
+<rect width="800" height="400" fill="url(#g1)" rx="10"/>
+<text x="50" y="220" fill="#ff6600" font-size="24">Exemple visuel</text>
+</svg>
+</aside>
+</section>
 
-    <section id="about" class="sections fade-in">
-      <div class="grid-2">
-        <div>
-          <h2>Le concept</h2>
-          <p class="muted">Le Cinq propose une carte courte, soignée et changeante. Chaque plat peut être visualisé en 3D avant de commander.</p>
-          <ul class="features-list">
-            <li>Design léger et élégant</li>
-            <li>Modèles 3D & AR intégrés</li>
-            <li>Responsive — pensé pour mobiles</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Réservation & Contact</h3>
-          <p class="muted">Appelez-nous au +213 X XX XX XX pour réserver ou envoyer un message via WhatsApp.</p>
-        </div>
-      </div>
-    </section>
+<section id="menu">
+<h3 class="section-title">Notre carte</h3>
+<p class="muted">La carte complète arrivera bientôt — <em>À venir</em>.</p>
+</section>
 
-    <section class="sections fade-in">
-      <h2>Exemples de plats</h2>
-      <div class="menu-preview">
-        <article class="dish-card">
-          <model-viewer src="assets/placeholder.glb" ios-src="assets/placeholder.usdz" alt="Été en Provence"
-                        ar ar-modes="webxr scene-viewer quick-look" camera-controls auto-rotate></model-viewer>
-          <div class="dish-body">
-            <h4>Été en Provence</h4>
-            <p class="muted">Filet de poisson, sauce citron — 3 500 DA</p>
-            <a class="btn small" href="menu.html">Voir le menu</a>
-          </div>
-        </article>
-        <article class="dish-card">
-          <div class="img-placeholder"></div>
-          <div class="dish-body">
-            <h4>Salade du Jardin</h4>
-            <p class="muted">Pousses, fromage, vinaigrette maison — 2 200 DA</p>
-            <a class="btn small" href="menu.html">Voir le menu</a>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
+<section id="nos-plats-en-3d">
+<h3 class="section-title">Nos plats en 3D</h3>
+<p class="muted">Visualisez un exemple 3D. Tapotez le modèle pour lancer la vue AR sur appareils compatibles.</p>
+<div class="card center" style="padding:20px">
+<model-viewer id="mv" src="models/placeholder.glb" ios-src="models/placeholder.usdz" alt="Modèle d'exemple" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" exposure="1" camera-controls touch-action="pan-y" style="width:320px;height:320px;max-width:100%;background:transparent;border-radius:12px"></model-viewer>
+</div>
+</section>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> Le Cinq</div>
-      <div class="muted">Design minimal — AR ready</div>
-    </div>
-  </footer>
+<section id="about">
+<h3 class="section-title">À propos de Le Cinq</h3>
+<div class="two-col" style="margin-top:12px">
+<div class="card">
+<h4 style="margin-top:0;color:#fff">Notre concept</h4>
+<p class="muted">Cuisine moderne et créative dans un cadre élégant et convivial.</p>
+</div>
+<div class="card">
+<h4 style="margin-top:0;color:#fff">Pourquoi nous choisir ?</h4>
+<ul class="muted">
+<li>Ingrédients frais et de qualité</li>
+<li>Plats innovants et artistiques</li>
+<li>Expérience gastronomique unique</li>
+</ul>
+</div>
+</div>
+</section>
 
-  <script src="js/main.js"></script>
+<section id="contact">
+<h3 class="section-title">Contact & localisation</h3>
+<div class="two-col" style="margin-top:12px">
+<div class="card">
+<h4 style="margin:0;color:#fff">Nous contacter</h4>
+<p class="muted">Tél : +33 1 23 45 67 89<br>Email : hello@lecinq.example</p>
+</div>
+<div class="card center">
+<h4 style="margin:0;color:#fff">Nous trouver</h4>
+<p class="muted">Adresse exemple, Paris</p>
+</div>
+</div>
+</section>
+
+</main>
+<footer>
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+<div>© <strong>Le Cinq</strong> — Tous droits réservés.</div>
+<div class="muted">Template prêt pour GitHub Pages.</div>
+</div>
+</footer>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
