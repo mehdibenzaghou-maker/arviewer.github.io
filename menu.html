@@ -1,39 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Cinq - Menu</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>le cinq — Menu</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <span class="number">5</span> Le Cinq
-        </div>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="menu.html" class="active">Menu</a>
-        </nav>
-    </header>
+<body class="theme">
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.svg" alt="le cinq logo" class="logo">
+      <span class="name">le cinq</span>
+    </a>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="menu.html">Menu</a>
+    </nav>
+  </header>
 
-    <section class="menu-section">
-        <h2>Nos plats en 3D</h2>
-        <div class="menu-grid">
-            <div class="dish">
-                <model-viewer src="assets/models/sample.usdz" alt="Plat 3D" ar ar-modes="webxr quick-look" camera-controls auto-rotate></model-viewer>
-                <h3>Plat 1</h3>
-            </div>
-            <div class="dish">
-                <model-viewer src="assets/models/sample2.usdz" alt="Plat 3D" ar ar-modes="webxr quick-look" camera-controls auto-rotate></model-viewer>
-                <h3>Plat 2</h3>
-            </div>
+  <main class="container">
+    <h1>Notre Menu</h1>
+    <p class="lead">Cliquer sur un plat pour voir la prévisualisation 3D / AR</p>
+
+    <section class="menu-grid">
+      <!-- Repeatable menu card -->
+      <article class="menu-card">
+        <div class="menu-media">
+          <model-viewer src="assets/placeholder.glb"
+                        ios-src="assets/placeholder.usdz"
+                        alt="Été en Provence"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls
+                        style="width:100%;height:220px;">
+          </model-viewer>
         </div>
+        <div class="menu-body">
+          <h3>Été en Provence</h3>
+          <p class="price">3 500 DA</p>
+          <p class="desc">Filet de poisson — Sauce citronnée — Légumes rôtis</p>
+          <a class="btn small" href="#" onclick="openAR('assets/placeholder.usdz');return false;">Voir en AR</a>
+        </div>
+      </article>
+
+      <!-- Placeholder second dish -->
+      <article class="menu-card">
+        <div class="menu-media placeholder-img"></div>
+        <div class="menu-body">
+          <h3>Salade du Jardin</h3>
+          <p class="price">2 200 DA</p>
+          <p class="desc">Jeunes pousses, fromage, vinaigrette maison</p>
+          <a class="btn small" href="#" onclick="openAR('assets/placeholder.usdz');return false;">Voir en AR</a>
+        </div>
+      </article>
     </section>
+  </main>
 
-    <footer>
-        <p>© 2025 Le Cinq. Tous droits réservés.</p>
-    </footer>
+  <footer class="site-footer">
+    <small>© <span id="year2"></span> le cinq — Tous droits réservés.</small>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

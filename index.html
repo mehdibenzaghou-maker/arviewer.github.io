@@ -1,30 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Cinq - Accueil</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>le cinq — Accueil</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <span class="number">5</span> Le Cinq
-        </div>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="menu.html">Menu</a>
-        </nav>
-    </header>
+<body class="theme">
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.svg" alt="le cinq logo" class="logo">
+      <span class="name">le cinq</span>
+    </a>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="menu.html">Menu</a>
+    </nav>
+  </header>
 
+  <main class="container">
     <section class="hero">
-        <h1>Bienvenue au <span>Le Cinq</span></h1>
-        <p>Une expérience culinaire élégante et moderne</p>
-        <a href="menu.html" class="btn">Découvrir le menu</a>
+      <h1>Bienvenue chez <strong>le cinq</strong></h1>
+      <p class="lead">Cuisine moderne — Expérience AR & 3D</p>
+      <a class="btn" href="menu.html">Voir le menu</a>
     </section>
 
-    <footer>
-        <p>© 2025 Le Cinq. Tous droits réservés.</p>
-    </footer>
+    <section class="features">
+      <article>
+        <h3>Modèles 3D intégrés</h3>
+        <p>Chaque plat peut inclure une prévisualisation 3D et un bouton AR (iOS Quick Look / Android).</p>
+      </article>
+      <article>
+        <h3>Design épuré</h3>
+        <p>Noir, blanc et orange pour un style élégant et contrasté.</p>
+      </article>
+    </section>
+
+    <section class="example-3d">
+      <h2>Aperçu 3D (exemple)</h2>
+      <!-- model-viewer: replace src with real GLB for web preview and .usdz for iOS Quick Look -->
+      <model-viewer src="assets/placeholder.glb"
+                    ios-src="assets/placeholder.usdz"
+                    alt="Exemple de plat 3D"
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    environment-image="neutral"
+                    auto-rotate camera-controls
+                    style="width:100%;max-width:600px;height:400px;">
+      </model-viewer>
+      <p class="muted">Bouton AR actif sur iOS (Quick Look) et sur Android via Scene Viewer / WebXR si disponible.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> le cinq — Tous droits réservés.</small>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
