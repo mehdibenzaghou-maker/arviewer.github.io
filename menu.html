@@ -3,63 +3,82 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>le cinq — Menu</title>
+  <title>Le Cinq — Menu</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
-<body class="theme">
-  <header class="site-header">
-    <a href="index.html" class="brand">
-      <img src="assets/logo.svg" alt="le cinq logo" class="logo">
-      <span class="name">le cinq</span>
-    </a>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="menu.html">Menu</a>
-    </nav>
+<body class="page-light">
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo-round.svg" alt="Le Cinq logo" class="brand-icon">
+        <div class="brand-text"><span class="word">Le</span><span class="space"></span><span class="five">5</span><span class="rest">Cinq</span></div>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="menu.html" class="nav-link btn-ghost">Menu</a>
+      </nav>
+    </div>
   </header>
 
   <main class="container">
-    <h1>Notre Menu</h1>
-    <p class="lead">Cliquer sur un plat pour voir la prévisualisation 3D / AR</p>
+    <section class="sections fade-in">
+      <h1>Notre Carte</h1>
+      <p class="lead muted">Cliquez sur un plat pour le voir en 3D ou en AR (iOS Quick Look / Android Scene Viewer).</p>
 
-    <section class="menu-grid">
-      <!-- Repeatable menu card -->
-      <article class="menu-card">
-        <div class="menu-media">
-          <model-viewer src="assets/placeholder.glb"
-                        ios-src="assets/placeholder.usdz"
-                        alt="Été en Provence"
-                        ar
-                        ar-modes="webxr scene-viewer quick-look"
-                        environment-image="neutral"
-                        camera-controls
-                        style="width:100%;height:220px;">
-          </model-viewer>
-        </div>
-        <div class="menu-body">
-          <h3>Été en Provence</h3>
-          <p class="price">3 500 DA</p>
-          <p class="desc">Filet de poisson — Sauce citronnée — Légumes rôtis</p>
-          <a class="btn small" href="#" onclick="openAR('assets/placeholder.usdz');return false;">Voir en AR</a>
-        </div>
-      </article>
+      <div class="menu-grid">
+        <!-- Card 1 -->
+        <article class="menu-card">
+          <div class="media">
+            <model-viewer src="assets/placeholder.glb"
+                          ios-src="assets/placeholder.usdz"
+                          alt="Été en Provence"
+                          ar ar-modes="webxr scene-viewer quick-look"
+                          camera-controls auto-rotate></model-viewer>
+          </div>
+          <div class="body">
+            <h3>Été en Provence</h3>
+            <p class="desc">Filet de poisson — Sauce citronnée — Légumes rôtis</p>
+            <div class="meta"><span class="price">3 500 DA</span>
+              <a class="btn small" href="#" onclick="openAR('assets/placeholder.usdz');return false;">Voir en AR</a>
+            </div>
+          </div>
+        </article>
 
-      <!-- Placeholder second dish -->
-      <article class="menu-card">
-        <div class="menu-media placeholder-img"></div>
-        <div class="menu-body">
-          <h3>Salade du Jardin</h3>
-          <p class="price">2 200 DA</p>
-          <p class="desc">Jeunes pousses, fromage, vinaigrette maison</p>
-          <a class="btn small" href="#" onclick="openAR('assets/placeholder.usdz');return false;">Voir en AR</a>
-        </div>
-      </article>
+        <!-- Card 2 -->
+        <article class="menu-card">
+          <div class="media img-placeholder"></div>
+          <div class="body">
+            <h3>Salade du Jardin</h3>
+            <p class="desc">Jeunes pousses, fromage, vinaigrette maison</p>
+            <div class="meta"><span class="price">2 200 DA</span>
+              <a class="btn small" href="#" onclick="openAR('assets/placeholder.usdz');return false;">Voir en AR</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 (placeholder) -->
+        <article class="menu-card">
+          <div class="media img-placeholder"></div>
+          <div class="body">
+            <h3>Plat du Jour</h3>
+            <p class="desc">Variation du chef — ingrédients frais</p>
+            <div class="meta"><span class="price">Variable</span>
+              <a class="btn small" href="#" onclick="openAR('assets/placeholder.usdz');return false;">Voir en AR</a>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <small>© <span id="year2"></span> le cinq — Tous droits réservés.</small>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year2"></span> Le Cinq</div>
+      <div class="muted">AR ready — Replace placeholder models with your own</div>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>
