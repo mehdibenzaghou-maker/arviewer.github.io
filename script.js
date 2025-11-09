@@ -1,5 +1,0 @@
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}})});
-const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.style.opacity=1;e.target.style.transform='none';}}},{threshold:0.12});
-document.querySelectorAll('.fade-up').forEach(el=>{obs.observe(el);el.style.transition='all .6s ease';});
-document.querySelectorAll('.btn-primary').forEach(btn=>{btn.addEventListener('click',()=>{const c=document.querySelector('#contact');if(c){c.scrollIntoView({behavior:'smooth'});}});});
-window.addEventListener('DOMContentLoaded',()=>{const mv=document.getElementById('mv');if(!mv)return;mv.addEventListener('click',async(ev)=>{try{if(mv.canActivateAR){await mv.enterAR();}else{if(typeof mv.enterAR==='function'){await mv.enterAR();}}}catch(err){console.log('AR non disponible:',err);}});});
