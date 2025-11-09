@@ -731,6 +731,7 @@ body {
     color: var(--light-gray);
     font-style: italic;
     line-height: 1.6;
+    font-size: 0.85rem; /* Smaller ingredients text */
 }
 
 .dish-model {
@@ -739,9 +740,10 @@ body {
     position: relative;
 }
 
+/* Larger 3D model viewer */
 model-viewer {
-    width: 200px;
-    height: 200px;
+    width: 250px; /* Increased from 200px */
+    height: 250px; /* Increased from 200px */
     margin-bottom: 1rem;
     border-radius: 10px;
     background: rgba(0,0,0,0.2);
@@ -1458,9 +1460,10 @@ model-viewer {
         max-width: 300px;
     }
     
+    /* Updated responsive model-viewer size */
     model-viewer {
-        width: 150px;
-        height: 150px;
+        width: 180px; /* Increased from 150px */
+        height: 180px; /* Increased from 150px */
     }
     
     .hero-buttons {
@@ -1505,8 +1508,9 @@ model-viewer {
         padding: 1rem;
     }
     
+    /* Updated responsive model-viewer size */
     .floating-card model-viewer {
-        width: 150px;
-        height: 150px;
+        width: 180px; /* Increased from 150px */
+        height: 180px; /* Increased from 150px */
     }
 }
