@@ -208,3 +208,46 @@ model-viewer {
         height: 150px;
     }
 }
+/* Drinks Section Styles */
+.drink-category {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.5rem;
+}
+
+.drink-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.drink-item {
+    background: rgba(255,255,255,0.05);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    text-align: center;
+}
+
+.drink-item h4 {
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.drink-price {
+    color: var(--light-gold);
+    font-weight: 600;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--light-gold);
+    font-style: italic;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
