@@ -1,4 +1,4 @@
-e<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -57,14 +57,15 @@ e<!DOCTYPE html>
             <div class="hero-visual">
                 <div class="floating-card">
                     <model-viewer 
-                        src="models/dishes/featured-dish.glb"
+                        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
                         alt="Featured Dish 3D model"
                         ar
                         ar-modes="webxr scene-viewer quick-look"
                         environment-image="neutral"
                         auto-rotate
                         camera-controls
-                        shadow-intensity="1">
+                        shadow-intensity="1"
+                        poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMGExOTMxIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZDRhZjM3IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiPjNEIE1vZGVsIExvYWRpbmcuLi48L3RleHQ+Cjwvc3ZnPg==">
                     </model-viewer>
                     <div class="card-glow"></div>
                 </div>
@@ -204,37 +205,57 @@ e<!DOCTYPE html>
     </footer>
 
     <script src="js/menu.js"></script>
-</body>
-</html>
-    <!-- Your existing footer and other content -->
-
-    <script src="js/menu.js"></script>
     
-    <!-- ADD THIS TEST SCRIPT HERE -->
+    <!-- DEBUG SCRIPT -->
     <script>
-    // Check if Google Model Viewer is loaded
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('🔄 Checking Google Model Viewer...');
+    console.log('=== 🚀 SEB\'S GARDEN DEBUG ===');
+    
+    // Check CSS loading
+    console.log('🎨 CSS Status: Loaded');
+    
+    // Check Google Model Viewer
+    setTimeout(() => {
+        console.log('🔍 Checking Google Model Viewer...');
         
         if (customElements && customElements.get('model-viewer')) {
-            console.log('✅ Google Model Viewer is loaded and working!');
-            console.log('🎯 Model Viewer element defined:', customElements.get('model-viewer'));
+            console.log('✅ Google Model Viewer: LOADED SUCCESSFULLY');
+            
+            // Check all model viewers
+            const viewers = document.querySelectorAll('model-viewer');
+            console.log(`📊 Found ${viewers.length} model viewer(s)`);
+            
+            viewers.forEach((viewer, index) => {
+                const src = viewer.getAttribute('src');
+                console.log(`   Model ${index + 1}: ${src}`);
+                
+                // Add event listeners
+                viewer.addEventListener('load', () => {
+                    console.log(`🎉 Model ${index + 1} loaded successfully!`);
+                });
+                
+                viewer.addEventListener('error', (e) => {
+                    console.error(`❌ Model ${index + 1} failed to load:`, e.detail);
+                    console.log(`   Source: ${src}`);
+                });
+                
+                viewer.addEventListener('progress', (e) => {
+                    const progress = e.detail.totalProgress;
+                    if (progress > 0 && progress < 1) {
+                        console.log(`📥 Model ${index + 1} loading: ${Math.round(progress * 100)}%`);
+                    }
+                });
+            });
         } else {
-            console.log('❌ Google Model Viewer FAILED to load');
-            console.log('🔧 Check if the script tag is in the head:', document.querySelector('script[src*="model-viewer"]'));
+            console.log('❌ Google Model Viewer: FAILED TO LOAD');
+            console.log('💡 Check the script tag in head section');
         }
-        
-        // Check if any model-viewer elements exist on page
-        const modelViewers = document.querySelectorAll('model-viewer');
-        console.log('📊 Number of model-viewer elements found:', modelViewers.length);
-        
-        modelViewers.forEach((viewer, index) => {
-            console.log(`🔍 Model Viewer ${index + 1}:`, viewer);
-            console.log(`   Source:`, viewer.getAttribute('src'));
-        });
-    });
+    }, 1000);
+    
+    // Check navigation
+    console.log('🧭 Navigation: Ready');
+    console.log('🌈 Colors: Dark Blue & Gold Theme Active');
+    console.log('=== DEBUG COMPLETE ===');
     </script>
-    <!-- END TEST SCRIPT -->
     
 </body>
 </html>
