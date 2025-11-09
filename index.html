@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seb's Garden - Fine Dining Experience</title>
+    <title>Seb's Garden - Premium Dining Experience</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
+    <!-- Modern Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
                 <h2>Seb's Garden</h2>
+                <div class="gold-bar"></div>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
@@ -29,91 +31,174 @@
         </div>
     </nav>
 
-    <section class="hero">
+    <!-- Modern Hero Section -->
+    <section class="modern-hero">
+        <div class="hero-background">
+            <div class="gold-overlay"></div>
+        </div>
         <div class="hero-content">
-            <h1 class="hero-title">Welcome to Seb's Garden</h1>
-            <p class="hero-subtitle">Where culinary art meets innovation in 3D</p>
-            <div class="hero-buttons">
-                <a href="menu.html" class="btn btn-primary">Explore Menu</a>
-                <a href="ar-gallery.html" class="btn btn-secondary">View in AR</a>
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Welcome to</span>
+                    <span class="title-accent">Seb's Garden</span>
+                </h1>
+                <p class="hero-subtitle">Where culinary art meets innovation in 3D</p>
+                <p class="hero-description">Experience fine dining like never before with our interactive 3D menu and augmented reality features.</p>
+                <div class="hero-buttons">
+                    <a href="menu.html" class="btn btn-primary">
+                        <span>Explore Menu</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <a href="ar-gallery.html" class="btn btn-secondary">
+                        <span>View in AR</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <model-viewer 
+                        src="YOUR_FEATURED_DISH_GLB_LINK_HERE"
+                        alt="Featured Dish 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        auto-rotate
+                        camera-controls
+                        shadow-intensity="1">
+                    </model-viewer>
+                    <div class="card-glow"></div>
+                </div>
             </div>
         </div>
-        <div class="hero-model">
-            <model-viewer 
-                src="YOUR_FEATURED_DISH_GLB_LINK_HERE"
-                alt="Featured Dish 3D model"
-                ar
-                ar-modes="webxr scene-viewer quick-look"
-                environment-image="neutral"
-                auto-rotate
-                camera-controls
-                style="width: 300px; height: 300px;">
-            </model-viewer>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll to explore</span>
         </div>
     </section>
 
-    <section class="features">
+    <!-- Features Section -->
+    <section class="modern-features">
         <div class="container">
-            <h2 class="section-title">Why Choose Seb's Garden?</h2>
+            <div class="section-header">
+                <h2>Why Choose Seb's Garden?</h2>
+                <p>Discover what makes our dining experience extraordinary</p>
+                <div class="section-divider"></div>
+            </div>
+            
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🍽️</div>
+                    <div class="feature-icon">
+                        <div class="icon-wrapper">
+                            🍽️
+                        </div>
+                    </div>
                     <h3>3D Menu Experience</h3>
-                    <p>View every dish in stunning 3D before ordering. Rotate, zoom, and explore our culinary creations.</p>
+                    <p>View every dish in stunning 3D detail. Rotate, zoom, and explore our culinary creations before ordering.</p>
+                    <div class="feature-glow"></div>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">📱</div>
+                    <div class="feature-icon">
+                        <div class="icon-wrapper">
+                            📱
+                        </div>
+                    </div>
                     <h3>AR Ready</h3>
-                    <p>Place our dishes in your environment using Augmented Reality. See how they look on your table!</p>
+                    <p>Place our dishes in your environment using Augmented Reality. See how they look on your actual table!</p>
+                    <div class="feature-glow"></div>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">🌟</div>
+                    <div class="feature-icon">
+                        <div class="icon-wrapper">
+                            🌟
+                        </div>
+                    </div>
                     <h3>Premium Ingredients</h3>
                     <p>Only the finest ingredients sourced locally and internationally for an exceptional dining experience.</p>
+                    <div class="feature-glow"></div>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">👨‍🍳</div>
+                    <div class="feature-icon">
+                        <div class="icon-wrapper">
+                            👨‍🍳
+                        </div>
+                    </div>
                     <h3>Expert Chefs</h3>
-                    <p>Our master chefs combine traditional techniques with innovative culinary artistry.</p>
+                    <p>Our master chefs combine traditional techniques with innovative culinary artistry and presentation.</p>
+                    <div class="feature-glow"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
+    <!-- CTA Section -->
+    <section class="modern-cta">
+        <div class="cta-background">
+            <div class="cta-pattern"></div>
+        </div>
         <div class="container">
-            <h2>Ready to Experience Dining in a New Dimension?</h2>
-            <p>Browse our interactive menu and see every dish come to life in 3D</p>
-            <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+            <div class="cta-content">
+                <h2>Ready to Experience Dining in a New Dimension?</h2>
+                <p>Browse our interactive 3D menu and see every dish come to life</p>
+                <a href="menu.html" class="btn btn-large">
+                    <span>View Full Menu</span>
+                    <div class="btn-sparkle">✨</div>
+                </a>
+            </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Seb's Garden</h3>
-                    <p>Where every dish tells a story in three dimensions.</p>
+                <div class="footer-main">
+                    <div class="footer-logo">
+                        <h3>Seb's Garden</h3>
+                        <p>Where every dish tells a story in three dimensions.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link">📘</a>
+                            <a href="#" class="social-link">📷</a>
+                            <a href="#" class="social-link">🐦</a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <div class="link-group">
+                            <h4>Navigation</h4>
+                            <a href="index.html">Home</a>
+                            <a href="menu.html">Menu</a>
+                            <a href="ar-gallery.html">3D Gallery</a>
+                            <a href="about.html">About</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                        
+                        <div class="link-group">
+                            <h4>Contact</h4>
+                            <p>📍 Your Restaurant Address</p>
+                            <p>📞 +213 XXX XX XX XX</p>
+                            <p>✉️ info@sebsgarden.com</p>
+                        </div>
+                        
+                        <div class="link-group">
+                            <h4>Hours</h4>
+                            <p>Mon-Thu: 11:00 AM - 11:00 PM</p>
+                            <p>Fri-Sat: 11:00 AM - 12:00 AM</p>
+                            <p>Sunday: 11:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="ar-gallery.html">3D Gallery</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Seb's Garden. All rights reserved.</p>
+                    <div class="footer-decoration">
+                        <div class="decoration-line"></div>
+                        <div class="gold-dot"></div>
+                        <div class="decoration-line"></div>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <p>📍 Your Restaurant Address</p>
-                    <p>📞 +213 XXX XX XX XX</p>
-                    <p>✉️ info@sebsgarden.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Seb's Garden. All rights reserved.</p>
             </div>
         </div>
     </footer>
