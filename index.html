@@ -206,3 +206,35 @@ e<!DOCTYPE html>
     <script src="js/menu.js"></script>
 </body>
 </html>
+    <!-- Your existing footer and other content -->
+
+    <script src="js/menu.js"></script>
+    
+    <!-- ADD THIS TEST SCRIPT HERE -->
+    <script>
+    // Check if Google Model Viewer is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('🔄 Checking Google Model Viewer...');
+        
+        if (customElements && customElements.get('model-viewer')) {
+            console.log('✅ Google Model Viewer is loaded and working!');
+            console.log('🎯 Model Viewer element defined:', customElements.get('model-viewer'));
+        } else {
+            console.log('❌ Google Model Viewer FAILED to load');
+            console.log('🔧 Check if the script tag is in the head:', document.querySelector('script[src*="model-viewer"]'));
+        }
+        
+        // Check if any model-viewer elements exist on page
+        const modelViewers = document.querySelectorAll('model-viewer');
+        console.log('📊 Number of model-viewer elements found:', modelViewers.length);
+        
+        modelViewers.forEach((viewer, index) => {
+            console.log(`🔍 Model Viewer ${index + 1}:`, viewer);
+            console.log(`   Source:`, viewer.getAttribute('src'));
+        });
+    });
+    </script>
+    <!-- END TEST SCRIPT -->
+    
+</body>
+</html>
