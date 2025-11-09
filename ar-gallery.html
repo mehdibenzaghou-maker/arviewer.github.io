@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Gallery - Seb's Garden</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Seb's Garden</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+                <li class="nav-item"><a href="ar-gallery.html" class="nav-link active">3D Gallery</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="gallery-container">
+        <div class="gallery-header">
+            <h1>3D Dish Gallery</h1>
+            <p>Explore our culinary creations in stunning 3D. Rotate, zoom, and experience each dish like never before.</p>
+            <div class="ar-instructions">
+                <h3>📱 How to View in AR:</h3>
+                <p>On mobile: Tap the "View in AR" button below any model to place it in your space</p>
+                <p>On desktop: Use your mouse to rotate and scroll to zoom</p>
+            </div>
+        </div>
+
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">All Dishes</button>
+            <button class="filter-btn" data-filter="entrees">Entrées</button>
+            <button class="filter-btn" data-filter="main">Main Courses</button>
+            <button class="filter-btn" data-filter="pizza">Pizza & Pasta</button>
+            <button class="filter-btn" data-filter="desserts">Desserts</button>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Featured Dish 1 -->
+            <div class="gallery-item" data-category="main">
+                <div class="model-container">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Featured Dish 1"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        auto-rotate
+                        camera-controls>
+                    </model-viewer>
+                </div>
+                <div class="gallery-info">
+                    <h3>SEB'S GARDEN SPECIAL</h3>
+                    <p class="dish-price">1400,00 DA</p>
+                    <p class="dish-desc">Our signature dish with the chef's special touch</p>
+                    <a href="YOUR_USDZ_FILE_LINK_HERE" rel="ar" class="ar-button">
+                        👆 View in AR
+                    </a>
+                </div>
+            </div>
+
+            <!-- Featured Dish 2 -->
+            <div class="gallery-item" data-category="pizza">
+                <div class="model-container">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Featured Pizza"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        auto-rotate
+                        camera-controls>
+                    </model-viewer>
+                </div>
+                <div class="gallery-info">
+                    <h3>CHÈVRE MIEL PIZZA</h3>
+                    <p class="dish-price">900,00 DA</p>
+                    <p class="dish-desc">Creamy goat cheese with sweet honey drizzle</p>
+                    <a href="YOUR_USDZ_FILE_LINK_HERE" rel="ar" class="ar-button">
+                        👆 View in AR
+                    </a>
+                </div>
+            </div>
+
+            <!-- Featured Dish 3 -->
+            <div class="gallery-item" data-category="desserts">
+                <div class="model-container">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Featured Dessert"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        auto-rotate
+                        camera-controls>
+                    </model-viewer>
+                </div>
+                <div class="gallery-info">
+                    <h3>TROIS CHOCOLATS BELGES</h3>
+                    <p class="dish-price">500,00 DA</p>
+                    <p class="dish-desc">Three Belgian chocolates: dark, white, and milk</p>
+                    <a href="YOUR_USDZ_FILE_LINK_HERE" rel="ar" class="ar-button">
+                        👆 View in AR
+                    </a>
+                </div>
+            </div>
+
+            <!-- Add more gallery items following the same pattern -->
+            <!-- You can duplicate these blocks for each dish you want to feature -->
+
+        </div>
+
+        <div class="gallery-cta">
+            <h2>Want to See More?</h2>
+            <p>Explore our complete menu with 3D models for every dish</p>
+            <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Seb's Garden</h3>
+                    <p>Experience dining in a new dimension.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="ar-gallery.html">3D Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📍 Your Restaurant Address</p>
+                    <p>📞 +213 XXX XX XX XX</p>
+                    <p>✉️ info@sebsgarden.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Seb's Garden. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/gallery.js"></script>
+</body>
+</html>
