@@ -1583,3 +1583,48 @@ model-viewer {
 .social-link i {
     font-size: 18px;
 }
+
+/* Styles pour les icônes des réseaux sociaux dans la page contact */
+.contact-info .social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.contact-info .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50%;
+    color: #d4af37;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.contact-info .social-link:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: #d4af37;
+    transform: translateY(-2px) scale(1.1);
+    color: #ffffff;
+}
+
+.contact-info .social-link i {
+    font-size: 18px;
+}
+
+/* Styles pour la section carte */
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.map-container iframe {
+    display: block;
+}
