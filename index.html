@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seb's Garden - Premium Dining Experience</title>
+    <title>Seb's Garden - Expérience Culinaire Premium</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
-    <!-- Modern Navigation -->
+    <!-- Navigation Moderne -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -17,10 +16,10 @@
                 <div class="gold-bar"></div>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link active">Accueil</a></li>
                 <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
-                <li class="nav-item"><a href="ar-gallery.html" class="nav-link">3D Gallery</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="ar-gallery.html" class="nav-link">Galerie 3D</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">À Propos</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -31,7 +30,7 @@
         </div>
     </nav>
 
-    <!-- Modern Hero Section -->
+    <!-- Section Hero Moderne -->
     <section class="modern-hero">
         <div class="hero-background">
             <div class="gold-overlay"></div>
@@ -39,50 +38,57 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
-                    <span class="title-line">Welcome to</span>
+                    <span class="title-line">Bienvenue au</span>
                     <span class="title-accent">Seb's Garden</span>
                 </h1>
-                <p class="hero-subtitle">Where culinary art meets innovation in 3D</p>
-                <p class="hero-description">Experience fine dining like never before with our interactive 3D menu and augmented reality features. Explore our dishes in stunning detail before they arrive at your table.</p>
+                <p class="hero-subtitle">Où l'art culinaire rencontre l'innovation en 3D</p>
+                <p class="hero-description">Découvrez la gastronomie comme jamais auparavant avec notre menu interactif 3D et nos fonctionnalités de réalité augmentée. Explorez nos plats dans les moindres détails avant qu'ils n'arrivent à votre table.</p>
                 <div class="hero-buttons">
                     <a href="menu.html" class="btn btn-primary">
-                        <span>Explore Menu</span>
+                        <span>Découvrir le Menu</span>
                         <div class="btn-glow"></div>
                     </a>
                     <a href="ar-gallery.html" class="btn btn-secondary">
-                        <span>View in AR</span>
+                        <span>Voir en RA</span>
                     </a>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="floating-card">
-                    <model-viewer 
-                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/AR-Code-1761838630115.glb"
-                        alt="Featured Dish 3D model"
-                        ar
-                        ar-modes="webxr scene-viewer quick-look"
-                        environment-image="neutral"
-                        auto-rotate
-                        camera-controls
-                        shadow-intensity="1"
-                        poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMGExOTMxIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZDRhZjM3IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiPjNEIE1vZGVsIExvYWRpbmcuLi48L3RleHQ+Cjwvc3ZnPg==">
-                    </model-viewer>
+                    <div class="plat-du-jour">
+                        <h3>Plat du Jour</h3>
+                        <div class="plat-content">
+                            <div class="plat-image">
+                                <!-- REMPLACEZ LE SRC PAR LE CHEMIN DE VOTRE PHOTO -->
+                                <img src="images/plat-du-jour.jpg" alt="Filet de Boeuf Rossini" class="plat-photo">
+                                <div class="image-glow"></div>
+                            </div>
+                            <div class="plat-details">
+                                <h4>Filet de Boeuf Rossini</h4>
+                                <p>Filet de boeuf wagyu, foie gras poêlé, truffe noire et purée de pommes de terre truffée</p>
+                                <div class="plat-price">
+                                    <span class="price">€45</span>
+                                    <span class="badge">Chef's Special</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card-glow"></div>
                 </div>
             </div>
         </div>
         <div class="scroll-indicator">
             <div class="scroll-line"></div>
-            <span>Scroll to explore</span>
+            <span>Défiler pour explorer</span>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Section Caractéristiques -->
     <section class="modern-features">
         <div class="container">
             <div class="section-header">
-                <h2>Why Choose Seb's Garden?</h2>
-                <p>Discover what makes our dining experience extraordinary</p>
+                <h2>Pourquoi Choisir Seb's Garden ?</h2>
+                <p>Découvrez ce qui rend notre expérience culinaire extraordinaire</p>
                 <div class="section-divider"></div>
             </div>
             
@@ -93,8 +99,8 @@
                             🍽️
                         </div>
                     </div>
-                    <h3>3D Menu Experience</h3>
-                    <p>View every dish in stunning 3D detail. Rotate, zoom, and explore our culinary creations before ordering.</p>
+                    <h3>Expérience Menu 3D</h3>
+                    <p>Visualisez chaque plat en détail 3D époustouflant. Tournez, zoomez et explorez nos créations culinaires avant de commander.</p>
                     <div class="feature-glow"></div>
                 </div>
 
@@ -104,8 +110,8 @@
                             📱
                         </div>
                     </div>
-                    <h3>AR Ready</h3>
-                    <p>Place our dishes in your environment using Augmented Reality. See how they look on your actual table!</p>
+                    <h3>Prêt pour la RA</h3>
+                    <p>Placez nos plats dans votre environnement grâce à la Réalité Augmentée. Voyez comment ils s'agencent sur votre table !</p>
                     <div class="feature-glow"></div>
                 </div>
 
@@ -115,8 +121,8 @@
                             🌟
                         </div>
                     </div>
-                    <h3>Premium Ingredients</h3>
-                    <p>Only the finest ingredients sourced locally and internationally for an exceptional dining experience.</p>
+                    <h3>Ingrédients Premium</h3>
+                    <p>Seuls les meilleurs ingrédients, sourcés localement et internationalement, pour une expérience culinaire exceptionnelle.</p>
                     <div class="feature-glow"></div>
                 </div>
 
@@ -126,39 +132,39 @@
                             👨‍🍳
                         </div>
                     </div>
-                    <h3>Expert Chefs</h3>
-                    <p>Our master chefs combine traditional techniques with innovative culinary artistry and presentation.</p>
+                    <h3>Chefs Experts</h3>
+                    <p>Nos maîtres chefs allient techniques traditionnelles et innovation dans l'art culinaire et la présentation.</p>
                     <div class="feature-glow"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Section CTA -->
     <section class="modern-cta">
         <div class="cta-background">
             <div class="cta-pattern"></div>
         </div>
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Experience Dining in a New Dimension?</h2>
-                <p>Browse our interactive 3D menu and see every dish come to life</p>
+                <h2>Prêt à Découvrir la Gastronomie sous un Nouveau Jour ?</h2>
+                <p>Parcourez notre menu interactif 3D et voyez chaque plat prendre vie</p>
                 <a href="menu.html" class="btn btn-large btn-primary">
-                    <span>View Full Menu</span>
+                    <span>Voir le Menu Complet</span>
                     <div class="btn-sparkle">✨</div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Modern Footer -->
+    <!-- Pied de Page Moderne -->
     <footer class="modern-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-main">
                     <div class="footer-logo">
                         <h3>Seb's Garden</h3>
-                        <p>Where every dish tells a story in three dimensions.</p>
+                        <p>Où chaque plat raconte une histoire en trois dimensions.</p>
                         <div class="social-links">
                             <a href="#" class="social-link">📘 Facebook</a>
                             <a href="#" class="social-link">📷 Instagram</a>
@@ -169,31 +175,31 @@
                     <div class="footer-links">
                         <div class="link-group">
                             <h4>Navigation</h4>
-                            <a href="index.html">Home</a>
+                            <a href="index.html">Accueil</a>
                             <a href="menu.html">Menu</a>
-                            <a href="ar-gallery.html">3D Gallery</a>
-                            <a href="about.html">About</a>
+                            <a href="ar-gallery.html">Galerie 3D</a>
+                            <a href="about.html">À Propos</a>
                             <a href="contact.html">Contact</a>
                         </div>
                         
                         <div class="link-group">
                             <h4>Contact</h4>
-                            <p>📍 Your Restaurant Address</p>
+                            <p>📍 Adresse de Votre Restaurant</p>
                             <p>📞 +213 XXX XX XX XX</p>
                             <p>✉️ info@sebsgarden.com</p>
                         </div>
                         
                         <div class="link-group">
-                            <h4>Hours</h4>
-                            <p>Mon-Thu: 11:00 AM - 11:00 PM</p>
-                            <p>Fri-Sat: 11:00 AM - 12:00 AM</p>
-                            <p>Sunday: 11:00 AM - 10:00 PM</p>
+                            <h4>Horaires</h4>
+                            <p>Lun-Jeu : 11h00 - 23h00</p>
+                            <p>Ven-Sam : 11h00 - 00h00</p>
+                            <p>Dimanche : 11h00 - 22h00</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="footer-bottom">
-                    <p>&copy; 2024 Seb's Garden. All rights reserved.</p>
+                    <p>&copy; 2024 Seb's Garden. Tous droits réservés.</p>
                     <div class="footer-decoration">
                         <div class="decoration-line"></div>
                         <div class="gold-dot"></div>
@@ -206,55 +212,17 @@
 
     <script src="js/menu.js"></script>
     
-    <!-- DEBUG SCRIPT -->
+    <!-- SCRIPT DE DEBUG -->
     <script>
-    console.log('=== 🚀 SEB\'S GARDEN DEBUG ===');
+    console.log('=== 🚀 DEBUG SEB\'S GARDEN ===');
     
-    // Check CSS loading
-    console.log('🎨 CSS Status: Loaded');
+    // Vérification du chargement CSS
+    console.log('🎨 Statut CSS : Chargé');
     
-    // Check Google Model Viewer
-    setTimeout(() => {
-        console.log('🔍 Checking Google Model Viewer...');
-        
-        if (customElements && customElements.get('model-viewer')) {
-            console.log('✅ Google Model Viewer: LOADED SUCCESSFULLY');
-            
-            // Check all model viewers
-            const viewers = document.querySelectorAll('model-viewer');
-            console.log(`📊 Found ${viewers.length} model viewer(s)`);
-            
-            viewers.forEach((viewer, index) => {
-                const src = viewer.getAttribute('src');
-                console.log(`   Model ${index + 1}: ${src}`);
-                
-                // Add event listeners
-                viewer.addEventListener('load', () => {
-                    console.log(`🎉 Model ${index + 1} loaded successfully!`);
-                });
-                
-                viewer.addEventListener('error', (e) => {
-                    console.error(`❌ Model ${index + 1} failed to load:`, e.detail);
-                    console.log(`   Source: ${src}`);
-                });
-                
-                viewer.addEventListener('progress', (e) => {
-                    const progress = e.detail.totalProgress;
-                    if (progress > 0 && progress < 1) {
-                        console.log(`📥 Model ${index + 1} loading: ${Math.round(progress * 100)}%`);
-                    }
-                });
-            });
-        } else {
-            console.log('❌ Google Model Viewer: FAILED TO LOAD');
-            console.log('💡 Check the script tag in head section');
-        }
-    }, 1000);
-    
-    // Check navigation
-    console.log('🧭 Navigation: Ready');
-    console.log('🌈 Colors: Dark Blue & Gold Theme Active');
-    console.log('=== DEBUG COMPLETE ===');
+    // Vérification de la navigation
+    console.log('🧭 Navigation : Prête');
+    console.log('🌈 Couleurs : Thème Bleu Foncé & Or Actif');
+    console.log('=== DEBUG TERMINÉ ===');
     </script>
     
 </body>
