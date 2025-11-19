@@ -1510,3 +1510,43 @@ model-viewer {
         height: 250px;
     }
 }
+
+/* Styles pour les icônes des réseaux sociaux */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    color: #d4af37;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.social-link:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: #d4af37;
+    transform: translateY(-2px);
+}
+
+.social-link i {
+    font-size: 16px;
+    width: 16px;
+    text-align: center;
+}
+
+/* Alternative si Font Awesome ne fonctionne pas */
+.social-link .icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
