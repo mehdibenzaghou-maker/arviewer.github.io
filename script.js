@@ -1,6 +1,10 @@
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', function() {
     
+    // ==================== DETECT SAFARI ====================
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    
     // ==================== MOBILE MENU ====================
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -8,24 +12,33 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', function(e) {
             e.stopPropagation();
-            hamburger.classList.toggle('active');
+            this.classList.toggle('active');
             navMenu.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
         
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', function() {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
+                document.body.style.overflow = '';
             });
         });
         
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (navMenu.classList.contains('active') && 
+            if (navMenu && navMenu.classList.contains('active') && 
                 !navMenu.contains(e.target) && 
-                !hamburger.contains(e.target)) {
+                hamburger && !hamburger.contains(e.target)) {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
     }
@@ -38,11 +51,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth scroll for active button into view
     function scrollToActiveButton(activeBtn) {
         if (menuNav && activeBtn) {
-            const scrollLeft = activeBtn.offsetLeft - menuNav.offsetLeft - 20;
-            menuNav.scrollTo({
-                left: scrollLeft,
-                behavior: 'smooth'
-            });
+            try {
+                const scrollLeft = activeBtn.offsetLeft - menuNav.offsetLeft - 20;
+                menuNav.scrollTo({
+                    left: Math.max(0, scrollLeft),
+                    behavior: 'smooth'
+                });
+            } catch(e) {
+                // Fallback for Safari
+                menuNav.scrollLeft = activeBtn.offsetLeft - menuNav.offsetLeft - 20;
+            }
         }
     }
     
@@ -59,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Scroll button into view
                 scrollToActiveButton(this);
                 
-                // Show active section with smooth transition
+                // Show active section
                 menuSections.forEach(section => {
                     if (section.id === sectionId) {
                         section.style.display = 'block';
@@ -74,22 +92,33 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        // Touch events for smoother scrolling
-        let startX;
-        let scrollLeft;
-        
+        // Touch events for smoother scrolling (Safari compatible)
         if (menuNav) {
+            let startX;
+            let scrollLeft;
+            let isDragging = false;
+            
             menuNav.addEventListener('touchstart', (e) => {
                 startX = e.touches[0].pageX - menuNav.offsetLeft;
                 scrollLeft = menuNav.scrollLeft;
+                isDragging = true;
             });
             
             menuNav.addEventListener('touchmove', (e) => {
-                if (!startX) return;
-                e.preventDefault();
+                if (!isDragging || !startX) return;
                 const x = e.touches[0].pageX - menuNav.offsetLeft;
                 const walk = (x - startX) * 1.5;
                 menuNav.scrollLeft = scrollLeft - walk;
+            });
+            
+            menuNav.addEventListener('touchend', () => {
+                isDragging = false;
+                startX = null;
+            });
+            
+            menuNav.addEventListener('touchcancel', () => {
+                isDragging = false;
+                startX = null;
             });
         }
     }
@@ -201,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('.menu-section');
     const navButtons = document.querySelectorAll('.menu-nav-btn');
     
-    if (sections.length > 0 && navButtons.length > 0) {
+    if (sections.length > 0 && navButtons.length > 0 && 'IntersectionObserver' in window) {
         const observerOptions = {
             root: null,
             rootMargin: '-100px 0px -200px 0px',
@@ -250,20 +279,65 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // ==================== FIX TOUCH ISSUES ====================
-    if ('ontouchstart' in window) {
-        document.body.style.cursor = 'pointer';
+    // ==================== FIX TOUCH ISSUES FOR SAFARI ====================
+    if (isSafari || isIOS) {
+        // Fix for 100vh issue on iOS
+        const setVh = () => {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
         
-        // Prevent zoom on double tap
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', function(e) {
-            const now = Date.now();
-            if (now - lastTouchEnd <= 300) {
-                e.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, false);
+        setVh();
+        window.addEventListener('resize', setVh);
+        window.addEventListener('orientationchange', setVh);
+        
+        // Fix for active states
+        document.querySelectorAll('button, .btn, .load-3d-btn, .menu-nav-btn').forEach(btn => {
+            btn.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.97)';
+            });
+            btn.addEventListener('touchend', function() {
+                this.style.transform = '';
+            });
+            btn.addEventListener('touchcancel', function() {
+                this.style.transform = '';
+            });
+        });
     }
     
-    console.log('Seb\'s Garden - Mobile Optimized');
+    // ==================== FIX FOR MODEL-VIEWER ON SAFARI ====================
+    if (isSafari) {
+        // Safari needs extra time for model-viewer
+        const load3dButtons = document.querySelectorAll('.load-3d-btn');
+        load3dButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                setTimeout(() => {
+                    const parent = this.closest('.menu-item-3d');
+                    const viewer = parent ? parent.querySelector('model-viewer') : null;
+                    if (viewer) {
+                        viewer.style.opacity = '0.99';
+                        setTimeout(() => {
+                            viewer.style.opacity = '';
+                        }, 100);
+                    }
+                }, 50);
+            });
+        });
+    }
+    
+    // ==================== FIX FORM INPUTS ON IOS ====================
+    if (isIOS) {
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                document.body.style.position = 'relative';
+            });
+            input.addEventListener('blur', () => {
+                document.body.style.position = '';
+                window.scrollTo(0, 0);
+            });
+        });
+    }
+    
+    console.log('Seb\'s Garden - Safari Compatible');
 });
