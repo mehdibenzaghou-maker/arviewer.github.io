@@ -38,17 +38,17 @@ if (menuNavBtns.length > 0) {
     });
 }
 
-// 3D Model Lazy Loading - Load only when button is clicked
+// 3D Model Lazy Loading - Load only when "Voir le plat" button is clicked
 document.addEventListener('DOMContentLoaded', () => {
     const modelViewers = document.querySelectorAll('model-viewer');
     
-    // Store original src and disable auto-load
+    // Initially hide all model-viewers and store their src
     modelViewers.forEach(viewer => {
         const originalSrc = viewer.getAttribute('src');
         if (originalSrc) {
             viewer.setAttribute('data-src', originalSrc);
             viewer.removeAttribute('src');
-            viewer.style.opacity = '0.3';
+            viewer.classList.remove('loaded');
         }
     });
     
@@ -57,6 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
     loadButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
+            
+            // Check if already loaded
+            if (button.classList.contains('loaded')) {
+                return;
+            }
+            
             const parent = button.closest('.menu-item-3d');
             const viewer = parent ? parent.querySelector('model-viewer') : null;
             
@@ -64,10 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const dataSrc = viewer.getAttribute('data-src');
                 if (dataSrc && !viewer.getAttribute('src')) {
                     viewer.setAttribute('src', dataSrc);
-                    viewer.style.opacity = '1';
-                    button.innerHTML = '<i class="fas fa-check"></i> Modèle chargé';
-                    button.disabled = true;
-                    button.style.opacity = '0.7';
+                    viewer.classList.add('loaded');
+                    button.innerHTML = '<i class="fas fa-check"></i> Plat chargé 🍽️';
+                    button.classList.add('loaded');
                 }
             }
         });
@@ -107,6 +112,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Fix for dashboard buttons in index
+document.querySelectorAll('.btn, .hero-buttons a, .cta-buttons a').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href !== '#' && !href.startsWith('#')) {
+            // Allow normal navigation
+            return true;
+        }
+    });
+});
+
 // Scroll Animation for Elements
 const observerOptions = {
     threshold: 0.1,
@@ -134,10 +150,11 @@ window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (navbar) {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-            navbar.style.backdropFilter = 'blur(10px)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
         } else {
-            navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
         }
     }
 });
