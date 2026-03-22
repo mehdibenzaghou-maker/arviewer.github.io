@@ -1,4 +1,4 @@
-/* Reset & Base - Mobile First */
+/* Reset & Base - Mobile First avec support Safari */
 * {
     margin: 0;
     padding: 0;
@@ -6,18 +6,26 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+}
+
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background: #F5F7FA;
     color: #1A2C3E;
     overflow-x: hidden;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     padding-bottom: env(safe-area-inset-bottom);
+    position: relative;
+    min-height: 100vh;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
     letter-spacing: -0.02em;
 }
@@ -36,15 +44,19 @@ h1, h2, h3, h4 {
     --text-muted: #4A5B6E;
 }
 
-/* Mobile Navigation */
+/* Mobile Navigation - Safari Fix */
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     background: var(--white);
     z-index: 1000;
     border-bottom: 2px solid var(--gold-primary);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
 }
 
 .nav-container {
@@ -52,6 +64,7 @@ h1, h2, h3, h4 {
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem 1rem;
+    max-width: 100%;
 }
 
 .nav-logo {
@@ -68,7 +81,7 @@ h1, h2, h3, h4 {
 .logo-text {
     font-size: 1.1rem;
     font-weight: 600;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     color: var(--navy-deep);
 }
 
@@ -78,6 +91,8 @@ h1, h2, h3, h4 {
     cursor: pointer;
     padding: 0.5rem;
     z-index: 1001;
+    background: transparent;
+    border: none;
 }
 
 .hamburger span {
@@ -87,6 +102,7 @@ h1, h2, h3, h4 {
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 2px;
+    display: block;
 }
 
 .nav-menu {
@@ -97,12 +113,14 @@ h1, h2, h3, h4 {
     height: calc(100vh - 60px);
     background: var(--white);
     flex-direction: column;
-    transition: 0.3s ease-out;
+    transition: left 0.3s ease-out;
     padding: 1.5rem;
     gap: 1rem;
     list-style: none;
     overflow-y: auto;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    margin: 0;
 }
 
 .nav-menu.active {
@@ -125,7 +143,7 @@ h1, h2, h3, h4 {
     background: rgba(201, 160, 61, 0.1);
 }
 
-/* Hero Section - Mobile */
+/* Hero Section - Safari Fix */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -134,10 +152,12 @@ h1, h2, h3, h4 {
     text-align: center;
     background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-primary) 100%);
     padding: 80px 1rem 2rem;
+    position: relative;
 }
 
 .hero-content {
     width: 100%;
+    max-width: 100%;
 }
 
 .hero-badge {
@@ -154,6 +174,7 @@ h1, h2, h3, h4 {
 .hero-title {
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    line-height: 1.2;
 }
 
 .title-line {
@@ -194,6 +215,7 @@ h1, h2, h3, h4 {
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 1.5rem;
     padding: 0 0.5rem;
+    line-height: 1.5;
 }
 
 .hero-buttons {
@@ -213,9 +235,11 @@ h1, h2, h3, h4 {
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 0.85rem;
     width: 100%;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -288,7 +312,7 @@ h1, h2, h3, h4 {
     margin: 0.5rem auto 0;
 }
 
-/* Features - Mobile */
+/* Features */
 .features {
     padding: 3rem 1rem;
     background: var(--white);
@@ -341,7 +365,7 @@ h1, h2, h3, h4 {
     line-height: 1.4;
 }
 
-/* Specials - Mobile */
+/* Specials */
 .specials {
     padding: 3rem 1rem;
     background: var(--navy-light);
@@ -416,7 +440,7 @@ h1, h2, h3, h4 {
     font-weight: 600;
 }
 
-/* Testimonials - Mobile */
+/* Testimonials */
 .testimonials {
     padding: 3rem 1rem;
     background: var(--white);
@@ -460,7 +484,7 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
 }
 
-/* CTA - Mobile */
+/* CTA */
 .cta {
     padding: 2.5rem 1rem;
     background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-primary) 100%);
@@ -486,7 +510,7 @@ h1, h2, h3, h4 {
     align-items: center;
 }
 
-/* Footer - Mobile */
+/* Footer */
 .footer {
     background: var(--navy-deep);
     padding: 2rem 1rem 1.5rem;
@@ -540,6 +564,7 @@ h1, h2, h3, h4 {
     justify-content: center;
     color: var(--gold-primary);
     font-size: 0.8rem;
+    text-decoration: none;
 }
 
 .footer-links h4 {
@@ -550,6 +575,7 @@ h1, h2, h3, h4 {
 
 .footer-links ul {
     list-style: none;
+    padding: 0;
 }
 
 .footer-links li {
@@ -579,7 +605,7 @@ h1, h2, h3, h4 {
     font-size: 0.65rem;
 }
 
-/* Menu Page - Mobile Optimized */
+/* Menu Page */
 .menu-page {
     padding-top: 60px;
 }
@@ -612,7 +638,7 @@ h1, h2, h3, h4 {
     padding: 1rem;
 }
 
-/* Horizontal Scroll Menu Nav - Smooth & Mobile Friendly */
+/* Horizontal Scroll Menu Nav - Safari Fix */
 .menu-nav {
     display: flex;
     overflow-x: auto;
@@ -620,13 +646,16 @@ h1, h2, h3, h4 {
     gap: 0.5rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.8rem;
-    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
+    white-space: nowrap;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .menu-nav::-webkit-scrollbar {
     height: 3px;
+    -webkit-appearance: none;
 }
 
 .menu-nav::-webkit-scrollbar-track {
@@ -650,8 +679,9 @@ h1, h2, h3, h4 {
     cursor: pointer;
     border-radius: 50px;
     transition: all 0.2s ease;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .menu-nav-btn:active {
@@ -762,6 +792,7 @@ model-viewer {
     justify-content: center;
     gap: 0.4rem;
     width: 100%;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .load-3d-btn:active {
@@ -802,7 +833,7 @@ model-viewer {
     font-weight: 500;
 }
 
-/* Contact Page - Mobile */
+/* Contact Page */
 .contact-page {
     padding-top: 60px;
 }
@@ -867,6 +898,7 @@ model-viewer {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .info-icon i {
@@ -911,6 +943,7 @@ model-viewer {
     color: var(--navy-deep);
     border: 1px solid var(--gray-medium);
     font-size: 0.9rem;
+    text-decoration: none;
 }
 
 .contact-form {
@@ -940,8 +973,17 @@ model-viewer {
     background: var(--gray-light);
     border: 1px solid var(--gray-medium);
     border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 0.8rem;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold-primary);
 }
 
 .btn-submit {
@@ -958,6 +1000,7 @@ model-viewer {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .btn-submit:active {
@@ -986,6 +1029,32 @@ model-viewer {
     height: 100%;
 }
 
+/* Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    
+    .hero {
+        min-height: -webkit-fill-available;
+    }
+    
+    body {
+        min-height: -webkit-fill-available;
+    }
+    
+    .menu-nav {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .btn, .load-3d-btn, .menu-nav-btn {
+        -webkit-appearance: none;
+    }
+}
+
 /* Safe Area for Notch */
 @supports (padding: max(0px)) {
     .navbar {
@@ -994,6 +1063,11 @@ model-viewer {
     
     body {
         padding-bottom: env(safe-area-inset-bottom);
+    }
+    
+    .nav-menu {
+        top: calc(60px + env(safe-area-inset-top));
+        height: calc(100vh - 60px - env(safe-area-inset-top));
     }
 }
 
