@@ -1,1 +1,765 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Seb's Garden</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Seb's Garden" class="logo">
+                <span class="logo-text">Seb's Garden</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
+    <main class="menu-page">
+        <div class="menu-hero">
+            <div class="menu-hero-content">
+                <h1>Notre Menu</h1>
+                <p>Découvrez nos créations en 3D interactive</p>
+                <div class="menu-hero-divider"></div>
+            </div>
+        </div>
+
+        <div class="menu-container">
+            <div class="menu-nav">
+                <button class="menu-nav-btn active" data-section="entrees-froides">Entrées Froides</button>
+                <button class="menu-nav-btn" data-section="entrees-chaudes">Entrées Chaudes</button>
+                <button class="menu-nav-btn" data-section="specialites-camembert">Camembert</button>
+                <button class="menu-nav-btn" data-section="pates">Pâtes</button>
+                <button class="menu-nav-btn" data-section="touche-chef">Touche du Chef</button>
+                <button class="menu-nav-btn" data-section="boucherie">Boucherie</button>
+                <button class="menu-nav-btn" data-section="poissons">Poissons</button>
+                <button class="menu-nav-btn" data-section="baguettes">Baguettes</button>
+                <button class="menu-nav-btn" data-section="burgers">Burgers</button>
+                <button class="menu-nav-btn" data-section="pizza">Pizza</button>
+                <button class="menu-nav-btn" data-section="boissons">Boissons</button>
+                <button class="menu-nav-btn" data-section="desserts">Desserts</button>
+            </div>
+
+            <!-- Entrées Froides -->
+            <section id="entrees-froides" class="menu-section active">
+                <div class="section-header">
+                    <h2>Entrées Froides</h2>
+                    <p>Des saveurs fraîches et raffinées</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Salade César</h3>
+                            <p class="price">700 DA</p>
+                            <p class="description">Poulet doré, croûtons, parmesan, laitue croquante, sauce maison</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Salade%20Cesar.glb"
+                                alt="Salade César 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Salade%20Cesar.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Viola Verde</h3>
+                            <p class="price">850 DA</p>
+                            <p class="description">Croustillant d'aubergines façon millefeuille, ricotta pesto</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Viola%20verde.glb"
+                                alt="Viola Verde 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Viola%20verde.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Sole di Sicilia</h3>
+                            <p class="price">900 DA</p>
+                            <p class="description">Poivrons grillés en carpaccio, crème onctueuse de ricotta au thon</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Sole.glb"
+                                alt="Sole di Sicilia 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Sole.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Été en Provence</h3>
+                            <p class="price">1200 DA</p>
+                            <p class="description">Brie fouettée et roquefort, pêche grillée au miel</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Ete%20en%20provence.glb"
+                                alt="Été en Provence 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Ete%20en%20provence.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Trempette de Saumon Fumé</h3>
+                            <p class="price">1300 DA</p>
+                            <p class="description">Saumon fumé enroulé autour de fromages frais, câpres, tomates cerises</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Trempette.glb"
+                                alt="Trempette Saumon 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Trempette.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Burrata Fraîcheur d'Été</h3>
+                            <p class="price">1300 DA</p>
+                            <p class="description">Burrata crémeuse, fruits grillés, pesto maison</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Buratta.glb"
+                                alt="Burrata 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Buratta.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Entrées Chaudes -->
+            <section id="entrees-chaudes" class="menu-section">
+                <div class="section-header">
+                    <h2>Entrées Chaudes</h2>
+                    <p>Des délices réconfortants</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Capra Calda</h3>
+                            <p class="price">800 DA</p>
+                            <p class="description">Chèvre chaud, bouquet de salade, tomates cerises, fruits secs, miel</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Capra%20calda.glb"
+                                alt="Capra Calda 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Capra%20calda.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Tatin alla Genovese</h3>
+                            <p class="price">900 DA</p>
+                            <p class="description">Pâte dorée croustillante, nuage lacté, pomodoro, pesto</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Tatin.glb"
+                                alt="Tatin 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Tatin.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Risotti Neri Fritti</h3>
+                            <p class="price">950 DA</p>
+                            <p class="description">Boule croustillante de risotto, crevettes, gruyère, sauce orange</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Risotti.glb"
+                                alt="Risotti 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Risotti.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Spécialités Camembert -->
+            <section id="specialites-camembert" class="menu-section">
+                <div class="section-header">
+                    <h2>Spécialités Camembert</h2>
+                    <p>Nos incontournables</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Camembert Barbecue</h3>
+                            <p class="price">800 DA</p>
+                            <p class="description">Camembert grillé, amandes effilées, miel, pain toasté</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/CB.glb"
+                                alt="Camembert BBQ 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/CB.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Camembert Pané</h3>
+                            <p class="price">850 DA</p>
+                            <p class="description">Camembert pané, amandes effilées, miel, pain toasté</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cpane.glb"
+                                alt="Camembert Pané 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cpane.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Camembert Tartiflette</h3>
+                            <p class="price">1000 DA</p>
+                            <p class="description">Béchamel, camembert rôti, chips de pommes de terre, dinde fumée</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Tartiflette.glb"
+                                alt="Tartiflette 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Tartiflette.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pâtes -->
+            <section id="pates" class="menu-section">
+                <div class="section-header">
+                    <h2>Pâtes</h2>
+                    <p>Spaghetti / Tagliatele / Fettuccine</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Cacio e Pepe</h3>
+                            <p class="price">900 DA</p>
+                            <p class="description">Poivre noir frais, beurre, parmesan</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cacio%20e%20pepe.glb"
+                                alt="Cacio e Pepe 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cacio%20e%20pepe.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Carbonara</h3>
+                            <p class="price">900 DA</p>
+                            <p class="description">Jambon de dinde, fromage, œuf, poivre noir, parmesan</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Carbonara.glb"
+                                alt="Carbonara 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Carbonara.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Frutti di Mare</h3>
+                            <p class="price">1200 DA</p>
+                            <p class="description">Mélange de fruits de mer, sauce tomate, ail, persil</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Fruitti.glb"
+                                alt="Frutti di Mare 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Fruitti.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section pour les autres catégories - structure similaire -->
+            <section id="touche-chef" class="menu-section">
+                <div class="section-header">
+                    <h2>La Touche du Chef</h2>
+                    <p>Nos créations signature</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Suprême de Poulet Sauce Forestière</h3>
+                            <p class="price">1350 DA</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Supreme.glb"
+                                alt="Suprême de Poulet 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Supreme.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Tournedos Rossini</h3>
+                            <p class="price">2600 DA</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Tournedos.glb"
+                                alt="Tournedos 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Tournedos.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Saumon Teriyaki</h3>
+                            <p class="price">2900 DA</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Saumon.glb"
+                                alt="Saumon 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Saumon.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="boucherie" class="menu-section">
+                <div class="section-header">
+                    <h2>Pièces de Boucherie Grillées</h2>
+                    <p>Viandes premium</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Entrecôte Grillée</h3>
+                            <p class="price">2500 DA</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Entrecote.glb"
+                                alt="Entrecôte 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Entrecote.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Côte de Bœuf</h3>
+                            <p class="price">3200 DA</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cote%20de%20b%C5%93uf%20.glb"
+                                alt="Côte de Bœuf 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cote%20de%20b%C5%93uf%20.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="poissons" class="menu-section">
+                <div class="section-header">
+                    <h2>Nos Poissons</h2>
+                    <p>Selon les arrivages</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Crevette Royale</h3>
+                            <p class="price">Selon arrivage</p>
+                            <p class="description">Au choix : grillée ou en sauce</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crevette%20royale.glb"
+                                alt="Crevette Royale 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crevette%20royale.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Calamaro Dorati</h3>
+                            <p class="price">Selon arrivage</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Calamaro.glb"
+                                alt="Calamaro 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Calamaro.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="baguettes" class="menu-section">
+                <div class="section-header">
+                    <h2>Baguettes Françaises</h2>
+                    <p>Accompagnées de frites</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Chicken</h3>
+                            <p class="price">550 DA</p>
+                            <p class="description">Poulet grillé, frites, sauce poulet</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Baguette%20chicken.glb"
+                                alt="Chicken Baguette 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Baguette%20chicken.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="burgers" class="menu-section">
+                <div class="section-header">
+                    <h2>Burgers</h2>
+                    <p>Accompagnés de frites</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Seb's Garden</h3>
+                            <p class="price">1000 DA</p>
+                            <p class="description">Viande hachée doublée, salade, tomate, œuf, oignon caramélisé, cheddar</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Burger%20sebs.glb"
+                                alt="Seb's Burger 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Burger%20sebs.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pizza" class="menu-section">
+                <div class="section-header">
+                    <h2>Pizza</h2>
+                    <p>Pâte maison, cuite au four</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Margueritte</h3>
+                            <p class="price">750 DA / 2250 DA</p>
+                            <p class="description">Sauce tomate, gruyère, mozzarella</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20Marguerite.glb"
+                                alt="Pizza Margueritte 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20Marguerite.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="boissons" class="menu-section">
+                <div class="section-header">
+                    <h2>Boissons Fraîches</h2>
+                </div>
+                <div class="drinks-grid">
+                    <div class="drinks-category">
+                        <h3>Milkshakes</h3>
+                        <div class="drink-item">
+                            <span>Banane</span>
+                            <span class="drink-price">450 DA</span>
+                        </div>
+                        <div class="drink-item">
+                            <span>Fraise</span>
+                            <span class="drink-price">450 DA</span>
+                        </div>
+                        <div class="drink-item">
+                            <span>Chocolat</span>
+                            <span class="drink-price">550 DA</span>
+                        </div>
+                    </div>
+                    <div class="drinks-category">
+                        <h3>Mocktails</h3>
+                        <div class="drink-item">
+                            <span>Sunrise</span>
+                            <span class="drink-price">400 DA</span>
+                        </div>
+                        <div class="drink-item">
+                            <span>Pina Colada</span>
+                            <span class="drink-price">500 DA</span>
+                        </div>
+                        <div class="drink-item">
+                            <span>Blue Hawaii</span>
+                            <span class="drink-price">500 DA</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="desserts" class="menu-section">
+                <div class="section-header">
+                    <h2>Spécialités Sucrées</h2>
+                    <p>Pâtes au choix : Crêpe / Gaufre / Pancake / Croissant</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Trois Chocolats Belges</h3>
+                            <p class="price">500 DA</p>
+                            <p class="description">Noir + Blanc + Au lait</p>
+                        </div>
+                        <div class="menu-item-3d">
+                            <model-viewer 
+                                src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crepe%203%20chocolat.glb"
+                                alt="Crêpe 3 Chocolats 3D"
+                                ar
+                                ar-modes="webxr scene-viewer quick-look"
+                                environment-image="neutral"
+                                camera-controls>
+                            </model-viewer>
+                            <button class="load-3d-btn" data-model="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crepe%203%20chocolat.glb">
+                                <i class="fas fa-cube"></i> Voir en 3D
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="Seb's Garden">
+                        <span>Seb's Garden</span>
+                    </div>
+                    <p>Où chaque plat raconte une histoire en trois dimensions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> VMQF+7F Tlemcen</li>
+                        <li><i class="fas fa-phone"></i> +213 562 70 62 19</li>
+                        <li><i class="fas fa-envelope"></i> Islemamara16@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Seb's Garden. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
