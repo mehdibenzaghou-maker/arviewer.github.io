@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.toggle('active');
         });
         
-        // Close menu when clicking on links
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', function() {
                 hamburger.classList.remove('active');
@@ -31,9 +30,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ==================== MENU NAVIGATION ====================
+    // ==================== HORIZONTAL SCROLL MENU NAVIGATION ====================
+    const menuNav = document.querySelector('.menu-nav');
     const menuNavBtns = document.querySelectorAll('.menu-nav-btn');
     const menuSections = document.querySelectorAll('.menu-section');
+    
+    // Smooth scroll for active button into view
+    function scrollToActiveButton(activeBtn) {
+        if (menuNav && activeBtn) {
+            const scrollLeft = activeBtn.offsetLeft - menuNav.offsetLeft - 20;
+            menuNav.scrollTo({
+                left: scrollLeft,
+                behavior: 'smooth'
+            });
+        }
+    }
     
     if (menuNavBtns.length > 0 && menuSections.length > 0) {
         menuNavBtns.forEach(btn => {
@@ -45,22 +56,47 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuNavBtns.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 
-                // Show active section
+                // Scroll button into view
+                scrollToActiveButton(this);
+                
+                // Show active section with smooth transition
                 menuSections.forEach(section => {
-                    section.classList.remove('active');
                     if (section.id === sectionId) {
+                        section.style.display = 'block';
                         section.classList.add('active');
+                        // Trigger reflow for animation
+                        void section.offsetHeight;
+                    } else {
+                        section.style.display = 'none';
+                        section.classList.remove('active');
                     }
                 });
             });
         });
+        
+        // Touch events for smoother scrolling
+        let startX;
+        let scrollLeft;
+        
+        if (menuNav) {
+            menuNav.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].pageX - menuNav.offsetLeft;
+                scrollLeft = menuNav.scrollLeft;
+            });
+            
+            menuNav.addEventListener('touchmove', (e) => {
+                if (!startX) return;
+                e.preventDefault();
+                const x = e.touches[0].pageX - menuNav.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                menuNav.scrollLeft = scrollLeft - walk;
+            });
+        }
     }
     
     // ==================== 3D MODEL LAZY LOADING ====================
-    // Get all model-viewer elements
     const modelViewers = document.querySelectorAll('model-viewer');
     
-    // Store original src and remove it to prevent auto-load
     modelViewers.forEach(viewer => {
         const src = viewer.getAttribute('src');
         if (src && !viewer.getAttribute('data-src')) {
@@ -69,17 +105,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Handle load buttons
     const loadButtons = document.querySelectorAll('.load-3d-btn');
     
     loadButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Skip if already loaded
             if (this.classList.contains('loaded')) return;
             
-            // Find the model-viewer
             const parent = this.closest('.menu-item-3d');
             const viewer = parent ? parent.querySelector('model-viewer') : null;
             
@@ -105,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = document.getElementById('message')?.value.trim();
             
             if (name && email && message) {
-                alert(`Merci ${name} ! Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.`);
+                alert(`Merci ${name} ! Votre message a été envoyé avec succès.`);
                 contactForm.reset();
             } else {
                 alert('Veuillez remplir tous les champs obligatoires.');
@@ -113,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ==================== SMOOTH SCROLL ====================
+    // ==================== SMOOTH SCROLL FOR ANCHORS ====================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -121,17 +154,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 const target = document.querySelector(href);
                 if (target) {
                     e.preventDefault();
-                    target.scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
+                    const offset = 70;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
                     });
                 }
             }
         });
     });
     
-    // ==================== SCROLL ANIMATION (Optimized) ====================
-    // Use Intersection Observer with low threshold for better performance
+    // ==================== SCROLL ANIMATION ====================
     const animatedElements = document.querySelectorAll('.feature-card, .menu-item, .testimonial-card, .info-card');
     
     if (animatedElements.length > 0 && 'IntersectionObserver' in window) {
@@ -140,79 +176,94 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
-                    observer.unobserve(entry.target); // Stop observing after animation
+                    observer.unobserve(entry.target);
                 }
             });
         }, { 
             threshold: 0.1,
-            rootMargin: '50px'
+            rootMargin: '30px'
         });
         
         animatedElements.forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            el.style.transform = 'translateY(15px)';
+            el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
             observer.observe(el);
         });
     } else {
-        // Fallback for older browsers
         animatedElements.forEach(el => {
             el.style.opacity = '1';
             el.style.transform = 'translateY(0)';
         });
     }
     
+    // ==================== ACTIVE NAVIGATION ON SCROLL ====================
+    const sections = document.querySelectorAll('.menu-section');
+    const navButtons = document.querySelectorAll('.menu-nav-btn');
+    
+    if (sections.length > 0 && navButtons.length > 0) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '-100px 0px -200px 0px',
+            threshold: 0.3
+        };
+        
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeId = entry.target.id;
+                    navButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        if (btn.getAttribute('data-section') === activeId) {
+                            btn.classList.add('active');
+                            scrollToActiveButton(btn);
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+    
     // ==================== NAVBAR SCROLL EFFECT ====================
     const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
+    let ticking = false;
     
     window.addEventListener('scroll', function() {
-        if (navbar) {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > 50) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
-            }
-            lastScroll = currentScroll;
+        if (!ticking) {
+            requestAnimationFrame(function() {
+                if (navbar) {
+                    if (window.scrollY > 50) {
+                        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                        navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+                    } else {
+                        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                        navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
+                    }
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
     });
     
-    // ==================== TOUCH OPTIMIZATIONS ====================
-    // Prevent double-tap zoom on buttons
-    const allButtons = document.querySelectorAll('button, .btn, .load-3d-btn');
-    allButtons.forEach(btn => {
-        btn.addEventListener('touchstart', function(e) {
-            // Allow normal behavior but prevent zoom if needed
-            if (e.target.closest('.menu-nav-btn')) {
-                e.preventDefault();
-            }
-        });
-    });
-    
-    // ==================== LAZY LOAD IMAGES ====================
-    if ('IntersectionObserver' in window) {
-        const images = document.querySelectorAll('img[data-src]');
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.getAttribute('data-src');
-                    img.removeAttribute('data-src');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-        
-        images.forEach(img => imageObserver.observe(img));
-    }
-    
-    // ==================== FIX TOUCH ISSUES ON MOBILE ====================
+    // ==================== FIX TOUCH ISSUES ====================
     if ('ontouchstart' in window) {
         document.body.style.cursor = 'pointer';
+        
+        // Prevent zoom on double tap
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(e) {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                e.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
     }
     
-    console.log('Seb\'s Garden - Site chargé avec succès');
+    console.log('Seb\'s Garden - Mobile Optimized');
 });
