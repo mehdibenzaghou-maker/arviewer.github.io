@@ -1,9 +1,12 @@
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ==================== DETECT SAFARI ====================
+    // Détecter Safari et iOS
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    console.log('Browser Detection - Safari:', isSafari, 'iOS:', isIOS, 'Mobile:', isMobile);
     
     // ==================== MOBILE MENU ====================
     const hamburger = document.querySelector('.hamburger');
@@ -43,26 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ==================== HORIZONTAL SCROLL MENU NAVIGATION ====================
-    const menuNav = document.querySelector('.menu-nav');
+    // ==================== MENU NAVIGATION ====================
     const menuNavBtns = document.querySelectorAll('.menu-nav-btn');
     const menuSections = document.querySelectorAll('.menu-section');
-    
-    // Smooth scroll for active button into view
-    function scrollToActiveButton(activeBtn) {
-        if (menuNav && activeBtn) {
-            try {
-                const scrollLeft = activeBtn.offsetLeft - menuNav.offsetLeft - 20;
-                menuNav.scrollTo({
-                    left: Math.max(0, scrollLeft),
-                    behavior: 'smooth'
-                });
-            } catch(e) {
-                // Fallback for Safari
-                menuNav.scrollLeft = activeBtn.offsetLeft - menuNav.offsetLeft - 20;
-            }
-        }
-    }
     
     if (menuNavBtns.length > 0 && menuSections.length > 0) {
         menuNavBtns.forEach(btn => {
@@ -74,85 +60,111 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuNavBtns.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 
-                // Scroll button into view
-                scrollToActiveButton(this);
-                
                 // Show active section
                 menuSections.forEach(section => {
+                    section.classList.remove('active');
                     if (section.id === sectionId) {
-                        section.style.display = 'block';
                         section.classList.add('active');
-                        // Trigger reflow for animation
-                        void section.offsetHeight;
-                    } else {
-                        section.style.display = 'none';
-                        section.classList.remove('active');
                     }
                 });
+                
+                // Scroll to top of menu container on mobile
+                if (isMobile) {
+                    const menuContainer = document.querySelector('.menu-container');
+                    if (menuContainer) {
+                        menuContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
             });
         });
-        
-        // Touch events for smoother scrolling (Safari compatible)
-        if (menuNav) {
-            let startX;
-            let scrollLeft;
-            let isDragging = false;
-            
-            menuNav.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].pageX - menuNav.offsetLeft;
-                scrollLeft = menuNav.scrollLeft;
-                isDragging = true;
-            });
-            
-            menuNav.addEventListener('touchmove', (e) => {
-                if (!isDragging || !startX) return;
-                const x = e.touches[0].pageX - menuNav.offsetLeft;
-                const walk = (x - startX) * 1.5;
-                menuNav.scrollLeft = scrollLeft - walk;
-            });
-            
-            menuNav.addEventListener('touchend', () => {
-                isDragging = false;
-                startX = null;
-            });
-            
-            menuNav.addEventListener('touchcancel', () => {
-                isDragging = false;
-                startX = null;
-            });
-        }
     }
     
-    // ==================== 3D MODEL LAZY LOADING ====================
-    const modelViewers = document.querySelectorAll('model-viewer');
-    
-    modelViewers.forEach(viewer => {
-        const src = viewer.getAttribute('src');
-        if (src && !viewer.getAttribute('data-src')) {
-            viewer.setAttribute('data-src', src);
-            viewer.removeAttribute('src');
-        }
-    });
-    
+    // ==================== 3D MODEL LOADING - FIX FOR SAFARI ====================
     const loadButtons = document.querySelectorAll('.load-3d-btn');
     
     loadButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', async function(e) {
             e.preventDefault();
             
-            if (this.classList.contains('loaded')) return;
+            // Prevent double clicks
+            if (this.classList.contains('loading') || this.classList.contains('loaded')) {
+                return;
+            }
             
-            const parent = this.closest('.menu-item-3d');
-            const viewer = parent ? parent.querySelector('model-viewer') : null;
+            this.classList.add('loading');
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Chargement...';
             
-            if (viewer) {
-                const dataSrc = viewer.getAttribute('data-src');
-                if (dataSrc && !viewer.getAttribute('src')) {
-                    viewer.setAttribute('src', dataSrc);
+            const modelUrl = this.getAttribute('data-model');
+            const targetId = this.getAttribute('data-target');
+            const placeholder = document.getElementById(targetId);
+            
+            if (!modelUrl || !placeholder) {
+                console.error('Model URL or placeholder not found');
+                this.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Erreur';
+                this.classList.remove('loading');
+                return;
+            }
+            
+            try {
+                if (isSafari || isIOS) {
+                    // Safari/iOS: Alternative approach with download link
+                    const safariMessage = document.createElement('div');
+                    safariMessage.className = 'safari-model-message';
+                    safariMessage.style.cssText = `
+                        background: var(--gold-primary);
+                        padding: 1rem;
+                        border-radius: 12px;
+                        text-align: center;
+                        animation: fadeIn 0.3s ease;
+                    `;
+                    safariMessage.innerHTML = `
+                        <i class="fas fa-download" style="font-size: 1.2rem; color: var(--navy-deep);"></i>
+                        <p style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--navy-deep); font-weight: 500;">Modèle 3D disponible</p>
+                        <a href="${modelUrl}" target="_blank" style="display: inline-block; margin-top: 0.5rem; padding: 0.4rem 1rem; background: var(--navy-deep); color: var(--gold-primary); text-decoration: none; border-radius: 50px; font-size: 0.7rem;">
+                            <i class="fas fa-external-link-alt"></i> Visualiser le modèle
+                        </a>
+                    `;
+                    placeholder.innerHTML = '';
+                    placeholder.appendChild(safariMessage);
+                    this.innerHTML = '<i class="fas fa-download"></i> Modèle disponible';
+                    this.classList.add('loaded');
+                } else {
+                    // Chrome/Others: Use model-viewer
+                    // Clear placeholder
+                    placeholder.innerHTML = '';
+                    
+                    // Create model-viewer element
+                    const modelViewer = document.createElement('model-viewer');
+                    modelViewer.setAttribute('src', modelUrl);
+                    modelViewer.setAttribute('alt', 'Plat 3D');
+                    modelViewer.setAttribute('camera-controls', '');
+                    modelViewer.setAttribute('environment-image', 'neutral');
+                    modelViewer.setAttribute('style', 'width:100%; height:150px; border-radius:12px; background:#E8F0F5;');
+                    modelViewer.setAttribute('auto-rotate', '');
+                    modelViewer.setAttribute('rotation-per-second', '30deg');
+                    
+                    // Add loading indicator
+                    modelViewer.addEventListener('load', function() {
+                        console.log('Model loaded successfully');
+                    });
+                    
+                    modelViewer.addEventListener('error', function(e) {
+                        console.error('Model loading error:', e);
+                        placeholder.innerHTML = '<div style="background:#E8F0F5; height:150px; display:flex; align-items:center; justify-content:center; border-radius:12px; flex-direction:column;"><i class="fas fa-cube" style="font-size:2rem; color:#C9A03D;"></i><p style="font-size:0.7rem; margin-top:0.5rem;">Modèle non disponible</p></div>';
+                    });
+                    
+                    placeholder.appendChild(modelViewer);
+                    
                     this.innerHTML = '<i class="fas fa-check"></i> Plat chargé 🍽️';
                     this.classList.add('loaded');
                 }
+            } catch (error) {
+                console.error('Error loading model:', error);
+                this.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Réessayer';
+                placeholder.innerHTML = '<div style="background:#E8F0F5; height:150px; display:flex; align-items:center; justify-content:center; border-radius:12px; flex-direction:column;"><i class="fas fa-cube" style="font-size:2rem; color:#C9A03D;"></i><p style="font-size:0.7rem; margin-top:0.5rem;">Cliquez pour réessayer</p></div>';
             }
+            
+            this.classList.remove('loading');
         });
     });
     
@@ -167,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = document.getElementById('message')?.value.trim();
             
             if (name && email && message) {
-                alert(`Merci ${name} ! Votre message a été envoyé avec succès.`);
+                alert(`Merci ${name} ! Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.`);
                 contactForm.reset();
             } else {
                 alert('Veuillez remplir tous les champs obligatoires.');
@@ -220,6 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
             observer.observe(el);
         });
     } else {
+        // Fallback for older browsers
         animatedElements.forEach(el => {
             el.style.opacity = '1';
             el.style.transform = 'translateY(0)';
@@ -245,7 +258,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         btn.classList.remove('active');
                         if (btn.getAttribute('data-section') === activeId) {
                             btn.classList.add('active');
-                            scrollToActiveButton(btn);
                         }
                     });
                 }
@@ -279,9 +291,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // ==================== FIX TOUCH ISSUES FOR SAFARI ====================
+    // ==================== FIX FOR IOS SAFARI 100vh ====================
     if (isSafari || isIOS) {
-        // Fix for 100vh issue on iOS
         const setVh = () => {
             const vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -291,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('resize', setVh);
         window.addEventListener('orientationchange', setVh);
         
-        // Fix for active states
+        // Fix for active states on iOS
         document.querySelectorAll('button, .btn, .load-3d-btn, .menu-nav-btn').forEach(btn => {
             btn.addEventListener('touchstart', function() {
                 this.style.transform = 'scale(0.97)';
@@ -301,26 +312,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             btn.addEventListener('touchcancel', function() {
                 this.style.transform = '';
-            });
-        });
-    }
-    
-    // ==================== FIX FOR MODEL-VIEWER ON SAFARI ====================
-    if (isSafari) {
-        // Safari needs extra time for model-viewer
-        const load3dButtons = document.querySelectorAll('.load-3d-btn');
-        load3dButtons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                setTimeout(() => {
-                    const parent = this.closest('.menu-item-3d');
-                    const viewer = parent ? parent.querySelector('model-viewer') : null;
-                    if (viewer) {
-                        viewer.style.opacity = '0.99';
-                        setTimeout(() => {
-                            viewer.style.opacity = '';
-                        }, 100);
-                    }
-                }, 50);
             });
         });
     }
@@ -339,5 +330,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    console.log('Seb\'s Garden - Safari Compatible');
+    // ==================== PRELOAD PLACEHOLDER IMAGES ====================
+    // Create placeholder images for all model placeholders
+    const placeholders = document.querySelectorAll('.model-placeholder');
+    placeholders.forEach(placeholder => {
+        if (!placeholder.querySelector('img') && !placeholder.querySelector('model-viewer')) {
+            const img = document.createElement('img');
+            img.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 150\'%3E%3Crect width=\'200\' height=\'150\' fill=\'%23E8F0F5\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23C9A03D\' font-size=\'14\'%3E🍽️%3C/text%3E%3C/svg%3E';
+            img.style.width = '100%';
+            img.style.height = '150px';
+            img.style.objectFit = 'cover';
+            img.style.borderRadius = '12px';
+            placeholder.appendChild(img);
+        }
+    });
+    
+    console.log('Seb\'s Garden - Site chargé avec succès');
 });
