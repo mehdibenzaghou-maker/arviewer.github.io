@@ -30,7 +30,7 @@ h1, h2, h3, h4 {
     letter-spacing: -0.02em;
 }
 
-/* Color Variables */
+/* Color Variables - Navy Blue & Gold */
 :root {
     --navy-deep: #0A1A2F;
     --navy-primary: #0F2A3F;
@@ -41,10 +41,18 @@ h1, h2, h3, h4 {
     --white: #FFFFFF;
     --gray-light: #F8F9FA;
     --gray-medium: #E2E8F0;
+    --text-dark: #1A2C3E;
     --text-muted: #4A5B6E;
 }
 
-/* Mobile Navigation - Safari Fix */
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -55,8 +63,6 @@ h1, h2, h3, h4 {
     z-index: 1000;
     border-bottom: 2px solid var(--gold-primary);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    -webkit-backdrop-filter: blur(0);
-    backdrop-filter: blur(0);
 }
 
 .nav-container {
@@ -138,12 +144,13 @@ h1, h2, h3, h4 {
     transition: all 0.3s;
 }
 
+.nav-menu a:hover,
 .nav-menu a.active {
     color: var(--gold-primary);
     background: rgba(201, 160, 61, 0.1);
 }
 
-/* Hero Section - Safari Fix */
+/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -280,11 +287,7 @@ h1, h2, h3, h4 {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* Section Common Styles */
-.section-padding {
-    padding: 3rem 1rem;
-}
-
+/* Section Styles */
 .section-header {
     text-align: center;
     margin-bottom: 2rem;
@@ -638,7 +641,7 @@ h1, h2, h3, h4 {
     padding: 1rem;
 }
 
-/* Horizontal Scroll Menu Nav - Safari Fix */
+/* Horizontal Scroll Menu Nav */
 .menu-nav {
     display: flex;
     overflow-x: auto;
@@ -649,8 +652,6 @@ h1, h2, h3, h4 {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     white-space: nowrap;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
 }
 
 .menu-nav::-webkit-scrollbar {
@@ -681,7 +682,6 @@ h1, h2, h3, h4 {
     transition: all 0.2s ease;
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     white-space: nowrap;
-    -webkit-tap-highlight-color: transparent;
 }
 
 .menu-nav-btn:active {
@@ -704,8 +704,14 @@ h1, h2, h3, h4 {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .menu-section .section-header {
@@ -746,21 +752,24 @@ h1, h2, h3, h4 {
 
 .menu-item-info h3 {
     font-size: 1rem;
+    font-weight: 600;
     color: var(--navy-deep);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
+    word-break: break-word;
 }
 
 .price {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--gold-primary);
-    margin-bottom: 0.3rem;
-    font-size: 0.85rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.9rem;
 }
 
 .description {
     color: var(--text-muted);
     font-size: 0.7rem;
     line-height: 1.4;
+    word-break: break-word;
 }
 
 .menu-item-3d {
@@ -769,12 +778,21 @@ h1, h2, h3, h4 {
     border-top: 1px solid var(--gray-medium);
 }
 
-model-viewer {
-    width: 100%;
-    height: 160px;
+.model-placeholder {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--gray-light);
     border-radius: 12px;
-    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.model-placeholder img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 .load-3d-btn {
@@ -784,14 +802,14 @@ model-viewer {
     padding: 0.6rem;
     border-radius: 50px;
     font-size: 0.75rem;
+    font-weight: 600;
     cursor: pointer;
-    font-weight: 500;
-    transition: all 0.2s ease;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.4rem;
-    width: 100%;
+    gap: 0.5rem;
+    transition: all 0.2s;
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -799,10 +817,19 @@ model-viewer {
     transform: scale(0.97);
 }
 
+.load-3d-btn.loading {
+    opacity: 0.7;
+    cursor: wait;
+}
+
 .load-3d-btn.loaded {
     background: var(--gray-medium);
     color: var(--text-muted);
     cursor: default;
+}
+
+.load-3d-btn.loaded:active {
+    transform: none;
 }
 
 /* Drinks Section */
@@ -1031,13 +1058,6 @@ model-viewer {
 
 /* Safari specific fixes */
 @supports (-webkit-touch-callout: none) {
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-    }
-    
     .hero {
         min-height: -webkit-fill-available;
     }
@@ -1050,8 +1070,21 @@ model-viewer {
         -webkit-overflow-scrolling: touch;
     }
     
-    .btn, .load-3d-btn, .menu-nav-btn {
-        -webkit-appearance: none;
+    .safari-model-message {
+        animation: fadeIn 0.3s ease;
+    }
+    
+    .fa-spin {
+        animation: fa-spin 1s infinite linear;
+    }
+}
+
+@keyframes fa-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -1073,10 +1106,6 @@ model-viewer {
 
 /* Tablet and Larger */
 @media (min-width: 768px) {
-    .section-padding {
-        padding: 4rem 2rem;
-    }
-    
     .hero-title {
         font-size: 2.5rem;
     }
