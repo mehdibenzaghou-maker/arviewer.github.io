@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A1E40">
+<title>Menu — Seb's Garden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="menu.css">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <svg class="logo-mark" viewBox="0 0 60 60">
+      <circle cx="30" cy="30" r="27" fill="none" stroke="#D4AF37" stroke-width="2"/>
+      <path d="M30,18 L42,30 L30,42 L18,30 Z" fill="#D4AF37"/>
+    </svg>
+    <span class="logo-text">
+      <span class="lt-seb">Seb's</span>
+      <span class="lt-gar">Garden</span>
+    </span>
+  </a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-link" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="menu.html" class="nav-link active" data-fr="Menu" data-en="Menu">Menu</a>
+    <a href="contact.html" class="nav-link" data-fr="Contact" data-en="Contact">Contact</a>
+    <button class="lang-toggle" id="langToggle">
+      <span class="lang-fr active">FR</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-en">EN</span>
+    </button>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu">
+    <span></span><span></span>
+  </button>
+</nav>
+<div class="mob-drawer" id="mobDrawer">
+  <a href="index.html" class="mob-link" data-fr="Accueil" data-en="Home">Accueil</a>
+  <a href="menu.html" class="mob-link" data-fr="Menu" data-en="Menu">Menu</a>
+  <a href="contact.html" class="mob-link" data-fr="Contact" data-en="Contact">Contact</a>
+  <button class="lang-toggle mob-lang" id="langToggleMob">
+    <span class="lang-fr active">FR</span> / <span class="lang-en">EN</span>
+  </button>
+</div>
+
+<!-- HERO -->
+<section class="menu-hero">
+  <div class="mh-inner">
+    <p class="eyebrow" data-fr="— Notre carte" data-en="— Our menu">— Notre carte</p>
+    <h1 class="mh-title">
+      <span data-fr="Le menu en" data-en="The menu in">Le menu en</span>
+      <span class="italic" data-fr="3 dimensions." data-en="3 dimensions.">3 dimensions.</span>
+    </h1>
+    <p class="mh-sub" data-fr="Visualisez chaque plat avant de le commander. Tournez, zoomez, examinez." data-en="Visualize every dish before ordering. Rotate, zoom, examine.">
+      Visualisez chaque plat avant de le commander. Tournez, zoomez, examinez.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION TABS -->
+<div class="menu-tabs">
+  <button class="menu-nav-btn active" data-section="entrees" data-fr="Entrées" data-en="Starters">Entrées</button>
+  <button class="menu-nav-btn" data-section="plats" data-fr="Plats" data-en="Mains">Plats</button>
+  <button class="menu-nav-btn" data-section="desserts" data-fr="Desserts" data-en="Desserts">Desserts</button>
+  <button class="menu-nav-btn" data-section="boissons" data-fr="Boissons" data-en="Drinks">Boissons</button>
+</div>
+
+<!-- MENU SECTIONS -->
+<section class="menu-section active" id="entrees">
+  <div class="menu-grid">
+
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer
+          data-src=""
+          alt="Camembert rôti"
+          auto-rotate camera-controls ar
+          camera-orbit="0deg 70deg 2m"
+          exposure="0.85"
+          shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name" data-fr="Camembert rôti" data-en="Roasted Camembert">Camembert rôti</h3>
+        <p class="dish-desc" data-fr="Au miel et amandes torréfiées." data-en="With honey and toasted almonds.">Au miel et amandes torréfiées.</p>
+        <div class="dish-price">850 DA</div>
+      </div>
+    </article>
+
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="" alt="Salade gourmande" auto-rotate camera-controls ar
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name" data-fr="Salade gourmande" data-en="Gourmet salad">Salade gourmande</h3>
+        <p class="dish-desc" data-fr="Mesclun, foie gras, magret fumé." data-en="Mesclun, foie gras, smoked duck breast.">Mesclun, foie gras, magret fumé.</p>
+        <div class="dish-price">1 200 DA</div>
+      </div>
+    </article>
+
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="" alt="Carpaccio" auto-rotate camera-controls ar
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name" data-fr="Carpaccio de bœuf" data-en="Beef carpaccio">Carpaccio de bœuf</h3>
+        <p class="dish-desc" data-fr="Parmesan, roquette, huile de truffe." data-en="Parmesan, arugula, truffle oil.">Parmesan, roquette, huile de truffe.</p>
+        <div class="dish-price">1 400 DA</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="menu-section" id="plats">
+  <div class="menu-grid">
+
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="" alt="Filet de bœuf" auto-rotate camera-controls ar
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name" data-fr="Filet de bœuf" data-en="Beef filet">Filet de bœuf</h3>
+        <p class="dish-desc" data-fr="Sauce forestière, gratin dauphinois." data-en="Forest mushroom sauce, dauphinois gratin.">Sauce forestière, gratin dauphinois.</p>
+        <div class="dish-price">2 800 DA</div>
+      </div>
+    </article>
+
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="" alt="Risotto fruits de mer" auto-rotate camera-controls ar
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name" data-fr="Risotto fruits de mer" data-en="Seafood risotto">Risotto fruits de mer</h3>
+        <p class="dish-desc" data-fr="Gambas, moules, encornets, safran." data-en="Prawns, mussels, squid, saffron.">Gambas, moules, encornets, safran.</p>
+        <div class="dish-price">2 400 DA</div>
+      </div>
+    </article>
+
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="" alt="Magret de canard" auto-rotate camera-controls ar
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name" data-fr="Magret de canard" data-en="Duck magret">Magret de canard</h3>
+        <p class="dish-desc" data-fr="Réduction de miel et figues." data-en="Honey and fig reduction.">Réduction de miel et figues.</p>
+        <div class="dish-price">2 600 DA</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="menu-section" id="desserts">
+  <div class="menu-grid">
+
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="" alt="Tiramisu" auto-rotate camera-controls ar
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name" data-fr="Tiramisu" data-en="Tiramisu">Tiramisu</h3>
+        <p class="dish-desc" data-fr="Recette traditionnelle italienne." data-en="Traditional Italian recipe.">Recette traditionnelle italienne.</p>
+        <div class="dish-price">650 DA</div>
+      </div>
+    </article>
+
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="" alt="Crème brûlée" auto-rotate camera-controls ar
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name" data-fr="Crème brûlée" data-en="Crème brûlée">Crème brûlée</h3>
+        <p class="dish-desc" data-fr="Vanille de Madagascar, caramel craquant." data-en="Madagascar vanilla, crisp caramel.">Vanille de Madagascar, caramel craquant.</p>
+        <div class="dish-price">600 DA</div>
+      </div>
+    </article>
+
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="" alt="Fondant chocolat" auto-rotate camera-controls ar
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name" data-fr="Fondant au chocolat" data-en="Chocolate fondant">Fondant au chocolat</h3>
+        <p class="dish-desc" data-fr="Cœur coulant, glace vanille." data-en="Molten heart, vanilla ice cream.">Cœur coulant, glace vanille.</p>
+        <div class="dish-price">700 DA</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="menu-section" id="boissons">
+  <div class="menu-grid menu-grid--simple">
+
+    <article class="drink-card reveal">
+      <h3 data-fr="Eau minérale" data-en="Mineral water">Eau minérale</h3>
+      <p data-fr="Plate ou pétillante, 75cl" data-en="Still or sparkling, 75cl">Plate ou pétillante, 75cl</p>
+      <div class="dish-price">200 DA</div>
+    </article>
+    <article class="drink-card reveal">
+      <h3 data-fr="Jus pressés" data-en="Fresh juices">Jus pressés</h3>
+      <p data-fr="Orange, citron, pomme" data-en="Orange, lemon, apple">Orange, citron, pomme</p>
+      <div class="dish-price">400 DA</div>
+    </article>
+    <article class="drink-card reveal">
+      <h3 data-fr="Café gourmand" data-en="Gourmet coffee">Café gourmand</h3>
+      <p data-fr="Espresso + 3 mignardises" data-en="Espresso + 3 mini desserts">Espresso + 3 mignardises</p>
+      <div class="dish-price">650 DA</div>
+    </article>
+    <article class="drink-card reveal">
+      <h3 data-fr="Thé à la menthe" data-en="Mint tea">Thé à la menthe</h3>
+      <p data-fr="Tradition algérienne" data-en="Algerian tradition">Tradition algérienne</p>
+      <div class="dish-price">350 DA</div>
+    </article>
+
+  </div>
+</section>
+
+<!-- FOOTER (same as index) -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-col ft-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom:1.2rem">
+        <svg class="logo-mark" viewBox="0 0 60 60">
+          <circle cx="30" cy="30" r="27" fill="none" stroke="#D4AF37" stroke-width="2"/>
+          <path d="M30,18 L42,30 L30,42 L18,30 Z" fill="#D4AF37"/>
+        </svg>
+        <span class="logo-text">
+          <span class="lt-seb">Seb's</span>
+          <span class="lt-gar">Garden</span>
+        </span>
+      </a>
+      <p class="ft-tag" data-fr="Où chaque plat raconte une histoire en trois dimensions." data-en="Where every dish tells a story in three dimensions.">
+        Où chaque plat raconte une histoire en trois dimensions.
+      </p>
+      <div class="ft-social">
+        <a href="https://www.facebook.com/share/17VvticsRC/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/restaurant_sebs_garden?igsh=MWt3MHo4cnE2cWJ4dA==" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+      <ul>
+        <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+        <li><a href="menu.html" data-fr="Menu" data-en="Menu">Menu</a></li>
+        <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> VMQF+7F Tlemcen</li>
+        <li><i class="fas fa-phone"></i> +213 562 70 62 19</li>
+        <li><i class="fas fa-envelope"></i> Islemamara16@gmail.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p data-fr="© 2024 Seb's Garden — Tous droits réservés." data-en="© 2024 Seb's Garden — All rights reserved.">© 2024 Seb's Garden — Tous droits réservés.</p>
+    <p class="ft-credit">Made by <a href="#" target="_blank">Cliff Agency</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

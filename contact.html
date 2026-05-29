@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A1E40">
+<title>Contact — Seb's Garden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <svg class="logo-mark" viewBox="0 0 60 60">
+      <circle cx="30" cy="30" r="27" fill="none" stroke="#D4AF37" stroke-width="2"/>
+      <path d="M30,18 L42,30 L30,42 L18,30 Z" fill="#D4AF37"/>
+    </svg>
+    <span class="logo-text">
+      <span class="lt-seb">Seb's</span>
+      <span class="lt-gar">Garden</span>
+    </span>
+  </a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-link" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="menu.html" class="nav-link" data-fr="Menu" data-en="Menu">Menu</a>
+    <a href="contact.html" class="nav-link active" data-fr="Contact" data-en="Contact">Contact</a>
+    <button class="lang-toggle" id="langToggle">
+      <span class="lang-fr active">FR</span><span class="lang-sep">/</span><span class="lang-en">EN</span>
+    </button>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+</nav>
+<div class="mob-drawer" id="mobDrawer">
+  <a href="index.html" class="mob-link" data-fr="Accueil" data-en="Home">Accueil</a>
+  <a href="menu.html" class="mob-link" data-fr="Menu" data-en="Menu">Menu</a>
+  <a href="contact.html" class="mob-link" data-fr="Contact" data-en="Contact">Contact</a>
+  <button class="lang-toggle mob-lang" id="langToggleMob">
+    <span class="lang-fr active">FR</span> / <span class="lang-en">EN</span>
+  </button>
+</div>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <p class="eyebrow" data-fr="— Nous joindre" data-en="— Get in touch">— Nous joindre</p>
+  <h1 class="ch-title">
+    <span data-fr="Réservons" data-en="Let's book">Réservons</span>
+    <span class="italic" data-fr="votre table." data-en="your table.">votre table.</span>
+  </h1>
+  <p class="ch-sub" data-fr="Pour toute réservation ou question, notre équipe est à votre écoute." data-en="For any reservation or question, our team is here for you.">
+    Pour toute réservation ou question, notre équipe est à votre écoute.
+  </p>
+</section>
+
+<!-- CONTACT GRID -->
+<section class="contact-grid">
+
+  <!-- Info — table layout -->
+  <div class="info-side reveal">
+    <h2 class="cs-h2" data-fr="Informations" data-en="Information">Informations</h2>
+    <div class="info-table">
+      <div class="info-row">
+        <div class="ir-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="ir-content">
+          <div class="ir-label" data-fr="Adresse" data-en="Address">Adresse</div>
+          <div class="ir-value">VMQF+7F Tlemcen, Algérie</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="ir-icon"><i class="fas fa-phone"></i></div>
+        <div class="ir-content">
+          <div class="ir-label" data-fr="Téléphone" data-en="Phone">Téléphone</div>
+          <div class="ir-value">+213 562 70 62 19</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="ir-icon"><i class="fas fa-envelope"></i></div>
+        <div class="ir-content">
+          <div class="ir-label">Email</div>
+          <div class="ir-value">Islemamara16@gmail.com</div>
+          <div class="ir-value-2">reservations@sebsgarden.com</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="ir-icon"><i class="fas fa-clock"></i></div>
+        <div class="ir-content">
+          <div class="ir-label" data-fr="Horaires" data-en="Hours">Horaires</div>
+          <div class="ir-value" data-fr="Lun — Jeu : 11h — 23h" data-en="Mon — Thu: 11am — 11pm">Lun — Jeu : 11h — 23h</div>
+          <div class="ir-value-2" data-fr="Ven — Sam : 11h — 00h" data-en="Fri — Sat: 11am — 12am">Ven — Sam : 11h — 00h</div>
+          <div class="ir-value-2" data-fr="Dim : 11h — 22h" data-en="Sun: 11am — 10pm">Dim : 11h — 22h</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-block">
+      <h3 data-fr="Suivez-nous" data-en="Follow us">Suivez-nous</h3>
+      <div class="social-row">
+        <a href="https://www.facebook.com/share/17VvticsRC/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/restaurant_sebs_garden?igsh=MWt3MHo4cnE2cWJ4dA==" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <div class="form-side reveal">
+    <h2 class="cs-h2" data-fr="Envoyez-nous un message" data-en="Send us a message">Envoyez-nous un message</h2>
+    <form id="contactForm" class="cf">
+      <div class="cf-row">
+        <div class="cf-group">
+          <label for="name" data-fr="Nom complet" data-en="Full name">Nom complet</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="cf-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-group">
+          <label for="phone" data-fr="Téléphone" data-en="Phone">Téléphone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="cf-group">
+          <label for="subject" data-fr="Sujet" data-en="Subject">Sujet</label>
+          <select id="subject" name="subject" required>
+            <option value="" data-fr="Sélectionnez" data-en="Select">Sélectionnez</option>
+            <option value="reservation" data-fr="Réservation" data-en="Reservation">Réservation</option>
+            <option value="feedback" data-fr="Retour d'expérience" data-en="Feedback">Retour d'expérience</option>
+            <option value="question" data-fr="Question" data-en="Question">Question</option>
+            <option value="other" data-fr="Autre" data-en="Other">Autre</option>
+          </select>
+        </div>
+      </div>
+      <div class="cf-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn-primary cf-submit">
+        <i class="fas fa-paper-plane"></i>
+        <span data-fr="Envoyer" data-en="Send">Envoyer</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section reveal">
+  <p class="eyebrow" data-fr="— Localisation" data-en="— Location">— Localisation</p>
+  <h2 class="sec-h2" data-fr="Où nous trouver." data-en="Where to find us.">Où nous trouver.</h2>
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.123456789012!2d-1.3283648!3d34.8881476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDUzJzE3LjMiTiAxwrAxOSczNC4zIlc!5e0!3m2!1sfr!2sdz!4v1700000000000!5m2!1sfr!2sdz"
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-col ft-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom:1.2rem">
+        <svg class="logo-mark" viewBox="0 0 60 60">
+          <circle cx="30" cy="30" r="27" fill="none" stroke="#D4AF37" stroke-width="2"/>
+          <path d="M30,18 L42,30 L30,42 L18,30 Z" fill="#D4AF37"/>
+        </svg>
+        <span class="logo-text">
+          <span class="lt-seb">Seb's</span>
+          <span class="lt-gar">Garden</span>
+        </span>
+      </a>
+      <p class="ft-tag" data-fr="Où chaque plat raconte une histoire en trois dimensions." data-en="Where every dish tells a story in three dimensions.">
+        Où chaque plat raconte une histoire en trois dimensions.
+      </p>
+      <div class="ft-social">
+        <a href="https://www.facebook.com/share/17VvticsRC/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/restaurant_sebs_garden?igsh=MWt3MHo4cnE2cWJ4dA==" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+      <ul>
+        <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+        <li><a href="menu.html" data-fr="Menu" data-en="Menu">Menu</a></li>
+        <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> VMQF+7F Tlemcen</li>
+        <li><i class="fas fa-phone"></i> +213 562 70 62 19</li>
+        <li><i class="fas fa-envelope"></i> Islemamara16@gmail.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p data-fr="© 2024 Seb's Garden — Tous droits réservés." data-en="© 2024 Seb's Garden — All rights reserved.">© 2024 Seb's Garden — Tous droits réservés.</p>
+    <p class="ft-credit">Made by <a href="#" target="_blank">Cliff Agency</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
