@@ -15,7 +15,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="nav">
   <a href="index.html" class="nav-logo">
     <svg class="logo-mark" viewBox="0 0 60 60">
@@ -32,14 +31,10 @@
     <a href="menu.html" class="nav-link active" data-fr="Menu" data-en="Menu">Menu</a>
     <a href="contact.html" class="nav-link" data-fr="Contact" data-en="Contact">Contact</a>
     <button class="lang-toggle" id="langToggle">
-      <span class="lang-fr active">FR</span>
-      <span class="lang-sep">/</span>
-      <span class="lang-en">EN</span>
+      <span class="lang-fr active">FR</span><span class="lang-sep">/</span><span class="lang-en">EN</span>
     </button>
   </div>
-  <button class="burger" id="burger" aria-label="Menu">
-    <span></span><span></span>
-  </button>
+  <button class="burger" id="burger"><span></span><span></span></button>
 </nav>
 <div class="mob-drawer" id="mobDrawer">
   <a href="index.html" class="mob-link" data-fr="Accueil" data-en="Home">Accueil</a>
@@ -50,242 +45,1626 @@
   </button>
 </div>
 
-<!-- HERO -->
 <section class="menu-hero">
   <div class="mh-inner">
-    <p class="eyebrow" data-fr="— Notre carte" data-en="— Our menu">— Notre carte</p>
+    <p class="eyebrow">— Notre carte</p>
     <h1 class="mh-title">
-      <span data-fr="Le menu en" data-en="The menu in">Le menu en</span>
-      <span class="italic" data-fr="3 dimensions." data-en="3 dimensions.">3 dimensions.</span>
+      <span>Le menu en</span>
+      <span class="italic">3 dimensions.</span>
     </h1>
-    <p class="mh-sub" data-fr="Visualisez chaque plat avant de le commander. Tournez, zoomez, examinez." data-en="Visualize every dish before ordering. Rotate, zoom, examine.">
-      Visualisez chaque plat avant de le commander. Tournez, zoomez, examinez.
-    </p>
+    <p class="mh-sub">Visualisez chaque plat avant de le commander. Tournez, zoomez, examinez.</p>
   </div>
 </section>
 
-<!-- SECTION TABS -->
 <div class="menu-tabs">
-  <button class="menu-nav-btn active" data-section="entrees" data-fr="Entrées" data-en="Starters">Entrées</button>
-  <button class="menu-nav-btn" data-section="plats" data-fr="Plats" data-en="Mains">Plats</button>
-  <button class="menu-nav-btn" data-section="desserts" data-fr="Desserts" data-en="Desserts">Desserts</button>
-  <button class="menu-nav-btn" data-section="boissons" data-fr="Boissons" data-en="Drinks">Boissons</button>
+  <button class="menu-nav-btn active" data-section="entrees-froides">Entrées Froides</button>
+  <button class="menu-nav-btn" data-section="specialites-camembert">Spécialités Camembert</button>
+  <button class="menu-nav-btn" data-section="pates">Pâtes</button>
+  <button class="menu-nav-btn" data-section="touche-chef">La Touche du Chef</button>
+  <button class="menu-nav-btn" data-section="boucherie">Pièces de Boucherie Grillées</button>
+  <button class="menu-nav-btn" data-section="poissons">Nos Poissons</button>
+  <button class="menu-nav-btn" data-section="baguettes">Baguettes Françaises</button>
+  <button class="menu-nav-btn" data-section="burgers">Burgers</button>
+  <button class="menu-nav-btn" data-section="pizza">Pizza</button>
+  <button class="menu-nav-btn" data-section="desserts">Spécialités Sucrées</button>
+  <button class="menu-nav-btn" data-section="boissons">Boissons Fraîches</button>
 </div>
 
-<!-- MENU SECTIONS -->
-<section class="menu-section active" id="entrees">
+
+<section class="menu-section active" id="entrees-froides">
+  <div class="section-intro reveal">
+    <p class="eyebrow">— Entrées Froides</p>
+    <h2 class="sec-h2 italic">Entrées Froides</h2>
+  </div>
   <div class="menu-grid">
-
     <article class="dish-card reveal">
       <div class="dish-3d">
         <div class="btn-layer">
           <button class="load-3d-btn">
             <i class="fas fa-cube"></i>
-            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+            <span>Voir en 3D</span>
           </button>
         </div>
-        <model-viewer
-          data-src=""
-          alt="Camembert rôti"
-          auto-rotate camera-controls ar
-          camera-orbit="0deg 70deg 2m"
-          exposure="0.85"
-          shadow-intensity="0.6"></model-viewer>
-      </div>
-      <div class="dish-info">
-        <h3 class="dish-name" data-fr="Camembert rôti" data-en="Roasted Camembert">Camembert rôti</h3>
-        <p class="dish-desc" data-fr="Au miel et amandes torréfiées." data-en="With honey and toasted almonds.">Au miel et amandes torréfiées.</p>
-        <div class="dish-price">850 DA</div>
-      </div>
-    </article>
-
-    <article class="dish-card reveal">
-      <div class="dish-3d">
-        <div class="btn-layer">
-          <button class="load-3d-btn">
-            <i class="fas fa-cube"></i>
-            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
-          </button>
-        </div>
-        <model-viewer data-src="" alt="Salade gourmande" auto-rotate camera-controls ar
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cesar%20sebs.glb" alt="SALADE CÉSAR" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
           camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
       </div>
       <div class="dish-info">
-        <h3 class="dish-name" data-fr="Salade gourmande" data-en="Gourmet salad">Salade gourmande</h3>
-        <p class="dish-desc" data-fr="Mesclun, foie gras, magret fumé." data-en="Mesclun, foie gras, smoked duck breast.">Mesclun, foie gras, magret fumé.</p>
-        <div class="dish-price">1 200 DA</div>
+        <h3 class="dish-name">SALADE CÉSAR</h3>
+        <p class="dish-desc">POULET DORÉE, CROÛTONS DORÉS, POUDRE DE PARMESAN, LAITUE CROQUANTE, SAUCE CÉSAR MAISON</p>
+        <div class="dish-price">650,00 DA</div>
       </div>
     </article>
-
     <article class="dish-card reveal">
       <div class="dish-3d">
         <div class="btn-layer">
           <button class="load-3d-btn">
             <i class="fas fa-cube"></i>
-            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+            <span>Voir en 3D</span>
           </button>
         </div>
-        <model-viewer data-src="" alt="Carpaccio" auto-rotate camera-controls ar
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Solmorejo.glb" alt="SALMOREJO DE CORDOBAS" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
           camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
       </div>
       <div class="dish-info">
-        <h3 class="dish-name" data-fr="Carpaccio de bœuf" data-en="Beef carpaccio">Carpaccio de bœuf</h3>
-        <p class="dish-desc" data-fr="Parmesan, roquette, huile de truffe." data-en="Parmesan, arugula, truffle oil.">Parmesan, roquette, huile de truffe.</p>
-        <div class="dish-price">1 400 DA</div>
+        <h3 class="dish-name">SALMOREJO DE CORDOBAS</h3>
+        <p class="dish-desc">VELOUTÉ FROID ONCTUEUX,POULET FUMÉ FERMIER, OEUF EN FINITION</p>
+        <div class="dish-price">800,00 DA</div>
       </div>
     </article>
-
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pesto%20poulet.glb" alt="POULET PESTA ROSO" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">POULET PESTA ROSO</h3>
+        <p class="dish-desc">POULET A LA PLANCHA, TOMATE CERISE UNE CREME A BASE DE PESTO, CROUTONS, BOUQUET DE SALADE</p>
+        <div class="dish-price">850,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Carpaccio.glb" alt="CARPACCIO DE TOMATE ANCHOIS" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CARPACCIO DE TOMATE ANCHOIS</h3>
+        <p class="dish-desc">ANCHOIS, SAUCE PESTO, PARMESAN, FINE LAMELLES DE TOMATE, HUILE D'OLIVE</p>
+        <div class="dish-price">850,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Arancini.glb" alt="L'AUTHENTIQUE ARANCINI" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">L'AUTHENTIQUE ARANCINI</h3>
+        <p class="dish-desc">TROIS BOULETTE DE RIZ BIEN DORÉES FARCI A LA VIANDE DE BOEUF ET MOZZARELLA, UN NID DE SAUCE TOMATE AUTHENTIQUE, PARMESAN</p>
+        <div class="dish-price">900,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/I%CC%87le%20de%20capri.glb" alt="ILE SE CAPRI" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">ILE SE CAPRI</h3>
+        <p class="dish-desc">ILES DE POULET CROUSTILLANT,BILLE DE MOZZA,BASILIC, SAUCE PESTO, BALSAMIQUE</p>
+        <div class="dish-price">950,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Elixir.glb" alt="ÉLIXIR FUMÉ DE DINDE & OIGNONS" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">ÉLIXIR FUMÉ DE DINDE & OIGNONS</h3>
+        <p class="dish-desc">DINDE FUMÉ GRILLÉE, OGNION CARAMÉLISÉE, NUAGE LACTÉ, CIBOULETTE, MIEL, ACCOMPAGNÉ DE GALETTE</p>
+        <div class="dish-price">950,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Maki.glb" alt="ÉCRIN DE CREVETTES FONDANTES" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">ÉCRIN DE CREVETTES FONDANTES</h3>
+        <p class="dish-desc">CREVETTES, MOZZARELLA, MAÏS, GRATINÉES AU FOUR</p>
+        <div class="dish-price">950,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Caresso%20.glb" alt="CARESSE DES ILES" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CARESSE DES ILES</h3>
+        <p class="dish-desc">AVOCAT, MANGUE, SAUMON FUMÉ, VINAIGRETTE MIELLÉE, SAVEUR FRUITS DE PASSION, HUILE D'OLIVE, PIMENT D'ESPELLETTE</p>
+        <div class="dish-price">1200,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Burata%20sebs.glb" alt="BURATTA DU PRINTEMPS" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">BURATTA DU PRINTEMPS</h3>
+        <p class="dish-desc">LA FAMEUSE BURATTA, MÉLANGE DE FRUITS, DE SAISON ET TOMATE CERISE, PESTO, BOUQUET DE SALADE, BALSAMIQUE</p>
+        <div class="dish-price">1300,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Vetello.glb" alt="VITELLO TONNATO" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">VITELLO TONNATO</h3>
+        <p class="dish-desc">VEAU FONDANT, SAUCE AU THON CITRONNÉE, CÂPRES DÉLICATES</p>
+        <div class="dish-price">1400,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Sushi%20sebs.glb" alt="SUSHI TACO" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">SUSHI TACO</h3>
+        <p class="dish-desc">FEUILLES DE NORI CROUSTILLANTES, RIZ SUSHIS, AVOCAT SAUMON FUMÉ, SAUCE UMAMI</p>
+        <div class="dish-price">2000,00 DA</div>
+      </div>
+    </article>
   </div>
 </section>
 
-<section class="menu-section" id="plats">
+<section class="menu-section" id="specialites-camembert">
+  <div class="section-intro reveal">
+    <p class="eyebrow">— Spécialités Camembert</p>
+    <h2 class="sec-h2 italic">Spécialités Camembert</h2>
+  </div>
   <div class="menu-grid">
-
     <article class="dish-card reveal">
       <div class="dish-3d">
         <div class="btn-layer">
           <button class="load-3d-btn">
             <i class="fas fa-cube"></i>
-            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+            <span>Voir en 3D</span>
           </button>
         </div>
-        <model-viewer data-src="" alt="Filet de bœuf" auto-rotate camera-controls ar
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/CB.glb" alt="CAMEMBERT BARBECUE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
           camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
       </div>
       <div class="dish-info">
-        <h3 class="dish-name" data-fr="Filet de bœuf" data-en="Beef filet">Filet de bœuf</h3>
-        <p class="dish-desc" data-fr="Sauce forestière, gratin dauphinois." data-en="Forest mushroom sauce, dauphinois gratin.">Sauce forestière, gratin dauphinois.</p>
-        <div class="dish-price">2 800 DA</div>
+        <h3 class="dish-name">CAMEMBERT BARBECUE</h3>
+        <p class="dish-desc">CAMEMBERT GRILLÉ, AMANDES EFFILÉES, MIEL, SERVI AVEC NOTRE PAIN TOASTÉ</p>
+        <div class="dish-price">800,00 DA</div>
       </div>
     </article>
-
     <article class="dish-card reveal">
       <div class="dish-3d">
         <div class="btn-layer">
           <button class="load-3d-btn">
             <i class="fas fa-cube"></i>
-            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+            <span>Voir en 3D</span>
           </button>
         </div>
-        <model-viewer data-src="" alt="Risotto fruits de mer" auto-rotate camera-controls ar
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cpane.glb" alt="CAMEMBERT PANÉ" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
           camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
       </div>
       <div class="dish-info">
-        <h3 class="dish-name" data-fr="Risotto fruits de mer" data-en="Seafood risotto">Risotto fruits de mer</h3>
-        <p class="dish-desc" data-fr="Gambas, moules, encornets, safran." data-en="Prawns, mussels, squid, saffron.">Gambas, moules, encornets, safran.</p>
-        <div class="dish-price">2 400 DA</div>
+        <h3 class="dish-name">CAMEMBERT PANÉ</h3>
+        <p class="dish-desc">CAMEMBERT PANÉ, AMANDES EFFILÉES, MIEL, SERVI AVEC NOTRE PAIN TOASTÉ</p>
+        <div class="dish-price">850,00 DA</div>
       </div>
     </article>
-
     <article class="dish-card reveal">
       <div class="dish-3d">
         <div class="btn-layer">
           <button class="load-3d-btn">
             <i class="fas fa-cube"></i>
-            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+            <span>Voir en 3D</span>
           </button>
         </div>
-        <model-viewer data-src="" alt="Magret de canard" auto-rotate camera-controls ar
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cpaupesto.glb" alt="CAMEMBERT BARBECUE AU PESTO" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
           camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
       </div>
       <div class="dish-info">
-        <h3 class="dish-name" data-fr="Magret de canard" data-en="Duck magret">Magret de canard</h3>
-        <p class="dish-desc" data-fr="Réduction de miel et figues." data-en="Honey and fig reduction.">Réduction de miel et figues.</p>
-        <div class="dish-price">2 600 DA</div>
+        <h3 class="dish-name">CAMEMBERT BARBECUE AU PESTO</h3>
+        <p class="dish-desc">CAMEMBERT GRILLÉ FOURÉ AU PESTO, AMANDES EFFILÉES, MIEL, SERVI AVEC NOTRE PAIN TOASTÉ</p>
+        <div class="dish-price">900,00 DA</div>
       </div>
     </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Tartiflette.glb" alt="CAMEMBERT TARTIFLETTE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CAMEMBERT TARTIFLETTE</h3>
+        <p class="dish-desc">BÉCHAMEL, CAMEMBERT RÔTI AU FOUR, GARNI DE CHIPS DE POMMES DE TERRE, DINDE FUMÉE</p>
+        <div class="dish-price">1000,00 DA</div>
+      </div>
+    </article>
+  </div>
+</section>
 
+<section class="menu-section" id="pates">
+  <div class="section-intro reveal">
+    <p class="eyebrow">— Pâtes</p>
+    <h2 class="sec-h2 italic">Pâtes</h2>
+  </div>
+  <div class="menu-grid">
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cacio%20e%20pepe.glb" alt="CACIO E PEPE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CACIO E PEPE</h3>
+        <p class="dish-desc">POIVRE NOIR FRAÎCHEMENT MOULU, BEURRE, PARMESAN</p>
+        <div class="dish-price">900,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Carbonara.glb" alt="CARBONARA" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CARBONARA</h3>
+        <p class="dish-desc">JAMBON DE DINDE, FROMAGE, ŒUF, POIVRE NOIR, PARMESAN</p>
+        <div class="dish-price">900,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Taglio.glb" alt="TACUOLINI CHAMPIONS" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">TACUOLINI CHAMPIONS</h3>
+        <p class="dish-desc">CHAMPIGNONS SAUTÉS, AIL, ÉCHALOTES, PERSIL, PARMESAN</p>
+        <div class="dish-price">950,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Conpolp.glb" alt="CON POPPETTE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CON POPPETTE</h3>
+        <p class="dish-desc">BOULETTE DE BŒUF, SAUCE TOMATE, AIL, OIGNON, PARMESAN</p>
+        <div class="dish-price">950,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pestopista.glb" alt="PESTO PISTACHIO" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">PESTO PISTACHIO</h3>
+        <p class="dish-desc">PISTACHES, BASILIC FRAIS, AIL, HUILE D'OLIVE, ZESTE DE CITRON, PARMESAN</p>
+        <div class="dish-price">1000,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crevette.glb" alt="CREVETTE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CREVETTE</h3>
+        <p class="dish-desc">CREVETTES SAUTÉES À L'AIL, BEURRE, CITRON, PERSIL</p>
+        <div class="dish-price">1000,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Ricottapesto.glb" alt="RICOTTA PESTO" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">RICOTTA PESTO</h3>
+        <p class="dish-desc">RICOTTA, PESTO, ZESTE DE CITRON</p>
+        <div class="dish-price">1100,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Fruitti.glb" alt="FRUTTI DI MARE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">FRUTTI DI MARE</h3>
+        <p class="dish-desc">MÉLANGE DE FRUITS DE MER, SAUCE TOMATE, AIL, PERSIL, PIMENT</p>
+        <div class="dish-price">1200,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Tagliatelle%20saumon%20.glb" alt="PATE AU SAUMON FUMÉ" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">PATE AU SAUMON FUMÉ</h3>
+        <div class="dish-price">1200,00 DA</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="menu-section" id="touche-chef">
+  <div class="section-intro reveal">
+    <p class="eyebrow">— La Touche du Chef</p>
+    <h2 class="sec-h2 italic">La Touche du Chef</h2>
+  </div>
+  <div class="menu-grid">
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Supreme.glb" alt="SUPREME DE POULET SAUCE FORESTIÈRE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">SUPREME DE POULET SAUCE FORESTIÈRE</h3>
+        <div class="dish-price">1100,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Tlemcaniya.glb" alt="LA TENTATION TLEMCENIENNE ( new )" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">LA TENTATION TLEMCENIENNE ( new )</h3>
+        <div class="dish-price">1350,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crevetteensauce.glb" alt="CREVETTE EN SAUCE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CREVETTE EN SAUCE</h3>
+        <div class="dish-price">1800,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Steakfrittes.glb" alt="STEAK FRITE AU SAUCE ENTRECOTE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">STEAK FRITE AU SAUCE ENTRECOTE</h3>
+        <div class="dish-price">1800,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Strongan.glb" alt="STROGANOFF" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">STROGANOFF</h3>
+        <div class="dish-price">2200,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/AR-Code-1761838630115.glb" alt="ESCALOPE DORÉE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">ESCALOPE DORÉE</h3>
+        <div class="dish-price">950,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Espadon.glb" alt="ESPADON A LA CATALAN" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">ESPADON A LA CATALAN</h3>
+        <div class="dish-price">2500,00 DA</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="menu-section" id="boucherie">
+  <div class="section-intro reveal">
+    <p class="eyebrow">— Pièces de Boucherie Grillées</p>
+    <h2 class="sec-h2 italic">Pièces de Boucherie Grillées</h2>
+  </div>
+  <div class="menu-grid">
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Steak%20a%20cheval%20.glb" alt="STEAK À CHEVAL COEUR FONDU" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">STEAK À CHEVAL COEUR FONDU</h3>
+        <div class="dish-price">1500,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Mixette%20de%20brochettes%20.glb" alt="MIXETTE DE BROCHETTES" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">MIXETTE DE BROCHETTES</h3>
+        <div class="dish-price">1800,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Brochettes%20melfouf.glb" alt="BROCHETTE MELFOUF" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">BROCHETTE MELFOUF</h3>
+        <div class="dish-price">2100,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Entrecote.glb" alt="ENTRECÔTE GRILLÉE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">ENTRECÔTE GRILLÉE</h3>
+        <div class="dish-price">2500,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cote%20de%20b%C5%93uf%20.glb" alt="CÔTE DE BŒUF" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CÔTE DE BŒUF</h3>
+        <div class="dish-price">3200,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Filetdeveau.glb" alt="FILET DE VEAU" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">FILET DE VEAU</h3>
+        <p class="dish-desc">SELON LA DISPONIBILITÉ</p>
+        <div class="dish-price">2700,00 DA</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="menu-section" id="poissons">
+  <div class="section-intro reveal">
+    <p class="eyebrow">— Nos Poissons</p>
+    <h2 class="sec-h2 italic">Nos Poissons</h2>
+  </div>
+  <div class="menu-grid">
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crevette%20royale.glb" alt="CREVETTE ROYALE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CREVETTE ROYALE</h3>
+        <p class="dish-desc">AU CHOIX : GRILLÉE OU EN SAUCE</p>
+        <div class="dish-price">SELON ARRIVAGE</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Calamaro.glb" alt="CALAMARO DORATI" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CALAMARO DORATI</h3>
+        <div class="dish-price">SELON ARRIVAGE</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Loup.glb" alt="LOUP DE MER GRILLÉ" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">LOUP DE MER GRILLÉ</h3>
+        <div class="dish-price">2600,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Espadon.glb" alt="ESPADON GRILLÉ" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">ESPADON GRILLÉ</h3>
+        <div class="dish-price">2700,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Limon.glb" alt="LIMON AU BEURRE BLANC" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">LIMON AU BEURRE BLANC</h3>
+        <div class="dish-price">2700,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Saumon.glb" alt="SAUMON GRILLÉ" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">SAUMON GRILLÉ</h3>
+        <div class="dish-price">3400,00 DA</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="menu-section" id="baguettes">
+  <div class="section-intro reveal">
+    <p class="eyebrow">— Baguettes Françaises</p>
+    <h2 class="sec-h2 italic">Baguettes Françaises</h2>
+  </div>
+  <div class="menu-grid">
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Baguette%20chicken.glb" alt="CHICKEN" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CHICKEN</h3>
+        <p class="dish-desc">POULET GRILLÉ, FRITES, SAUCE POULET</p>
+        <div class="dish-price">550,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Bforestier.glb" alt="LE FORESTIER" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">LE FORESTIER</h3>
+        <p class="dish-desc">POULET À L'OIGNON ET CHAMPIGNON CARAMÉLISÉ, FRITES, GRATINÉE</p>
+        <div class="dish-price">700,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Bsauvage.glb" alt="LE SAUVAGE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">LE SAUVAGE</h3>
+        <p class="dish-desc">VIANDE HACHÉE, FRITES, SAUCE D'ENTRECÔTE, GRATINÉE</p>
+        <div class="dish-price">750,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Bcrevette.glb" alt="AU CREVETTES" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">AU CREVETTES</h3>
+        <p class="dish-desc">CREVETTES GRILLÉES, FRITES, SAUCE DE CREVETTE, GRATINÉE</p>
+        <div class="dish-price">900,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Bmelfouf.glb" alt="MELFOUF" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">MELFOUF</h3>
+        <p class="dish-desc">BROCHETTES MELFOUF, FRITES, SAUCE MAISON</p>
+        <div class="dish-price">900,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Blenoble.glb" alt="LE NOBLE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">LE NOBLE</h3>
+        <p class="dish-desc">ENTRECÔTE GRILLÉE, FRITES, SAUCE D'ENTRECÔTE</p>
+        <div class="dish-price">1000,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Bphilly.glb" alt="PHILLY CHEESE-STEAK" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">PHILLY CHEESE-STEAK</h3>
+        <p class="dish-desc">STEAK GRILLÉ, FRITES, OIGNONS ET POIVRONS GRILLÉS, GRATINÉ AU FROMAGE</p>
+        <div class="dish-price">1100,00 DA</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="menu-section" id="burgers">
+  <div class="section-intro reveal">
+    <p class="eyebrow">— Burgers</p>
+    <h2 class="sec-h2 italic">Burgers</h2>
+  </div>
+  <div class="menu-grid">
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Le%20croustillant.glb" alt="LE CROUSTILLANT" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">LE CROUSTILLANT</h3>
+        <p class="dish-desc">POULET À LA CHAPELURE, LAITUE, TOMATE, SLICE, SAUCE MAISON</p>
+        <div class="dish-price">450,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Le%20classique.glb" alt="LE CLASSIQUE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">LE CLASSIQUE</h3>
+        <p class="dish-desc">VIANDE HACHÉE, LAITUE, TOMATE, SLICE, SAUCE MAISON</p>
+        <div class="dish-price">500,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Le%20beef.glb" alt="LE BEEF" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">LE BEEF</h3>
+        <p class="dish-desc">VIANDE HACHÉE, LAITUE, TOMATE, OIGNON, CHEDDAR, SAUCE MAISON</p>
+        <div class="dish-price">600,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Burger%20le%20forestier.glb" alt="LE FORESTIER" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">LE FORESTIER</h3>
+        <p class="dish-desc">VIANDE HACHÉE, SALADE, TOMATE, CHAMPIGNON, OIGNON CARAMÉLISÉ, CHEDDAR, SAUCE MAISON</p>
+        <div class="dish-price">650,00 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Burger%20sebs.glb" alt="SEB'S GARDEN" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">SEB'S GARDEN</h3>
+        <p class="dish-desc">VIANDE HACHÉE DOUBLÉE, SALADE, TOMATE, ŒUF, OIGNON CARAMÉLISÉ, CHEDDAR, SAUCE MAISON, GRATINÉE</p>
+        <div class="dish-price">1000,00 DA</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="menu-section" id="pizza">
+  <div class="section-intro reveal">
+    <p class="eyebrow">— Pizza</p>
+    <h2 class="sec-h2 italic">Pizza</h2>
+  </div>
+  <div class="menu-grid">
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20Marguerite.glb" alt="MARGUERITTE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">MARGUERITTE</h3>
+        <p class="dish-desc">SAUCE TOMATE, GRUYÈRE, MOZZARELLA</p>
+        <div class="dish-price">600 DA / 1800 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20vegetarian.glb" alt="VÉGÉTARIENNE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">VÉGÉTARIENNE</h3>
+        <p class="dish-desc">SAUCE TOMATE, LÉGUMES, MAÏS, TOMATE CERISE, GRUYÈRE, MOZZARELLA</p>
+        <div class="dish-price">750 DA / 2400 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20thon.glb" alt="AU THON" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">AU THON</h3>
+        <p class="dish-desc">SAUCE TOMATE, THON, GRUYÈRE, MOZZARELLA</p>
+        <div class="dish-price">750 DA / 2400 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20blanca.glb" alt="LA BLANCA" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">LA BLANCA</h3>
+        <p class="dish-desc">SAUCE BLANCHE, POULET, GRUYÈRE, MOZZARELLA</p>
+        <div class="dish-price">850 DA / 2650 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20pesto.glb" alt="PESTO" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">PESTO</h3>
+        <p class="dish-desc">SAUCE TOMATE, SAUCE PESTO, GRUYÈRE, MOZZARELLA, CHAMPIGNONS</p>
+        <div class="dish-price">900 DA / 2800 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20sebs.glb" alt="SEB'S GARDEN" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">SEB'S GARDEN</h3>
+        <p class="dish-desc">MÉLANGE DU CHEF OU AU CHOIX</p>
+        <div class="dish-price">1400 DA / 4200 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20steak.glb" alt="STEAK CHEDDAR" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">STEAK CHEDDAR</h3>
+        <p class="dish-desc">SAUCE TOMATE, STEAK GRILLÉ, SAUCE BALSAMIQUE, GRUYÈRE, CHEDDAR, MOZZARELLA</p>
+        <div class="dish-price">1400 DA / 4300 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20saumon%20sebs.glb" alt="SAUMON" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">SAUMON</h3>
+        <div class="dish-price">1300 DA / 3900 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20chevre%20miel.glb" alt="CHEVRE MIEL" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CHEVRE MIEL</h3>
+        <p class="dish-desc">SAUCE BLANCHE, POULET, FROMAGE DE CHEVRE,MIEL,GRUYÉRE,MOZZARELLA</p>
+        <div class="dish-price">900 DA / 2800 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20Valhalla.glb" alt="VALHALA" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">VALHALA</h3>
+        <p class="dish-desc">SAUCE TOMATE,VIANDE HACHÉE,GRUYÉRE,MOZZARELLA</p>
+        <div class="dish-price">900 DA / 2800 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20saumon%20sebs.glb" alt="CHEVRE CHAUD" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">CHEVRE CHAUD</h3>
+        <div class="dish-price">900 DA / 2800 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20Parisienne.glb" alt="PARISIENNE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">PARISIENNE</h3>
+        <p class="dish-desc">SAUCE BLANCHE, POULET,FROMAGE FUMÉ,GRUYÉRE,MOZZARELLA</p>
+        <div class="dish-price">950 DA / 2800 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20bufallo.glb" alt="BUFALLO" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">BUFALLO</h3>
+        <p class="dish-desc">SAUCE TOMATE, VIANDE HACHÉE,OEUF,FROMAGE FUMÉ,GRUYÉRE,MOZZARELLA</p>
+        <div class="dish-price">1000 DA / 3000 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza5%20fromages.glb" alt="5 FROMAGES" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">5 FROMAGES</h3>
+        <p class="dish-desc">SAUCE BLANCHE,BRIE,FROMAGE FUMÉ,CHEDDAR,GRUYÉRE,MOZZARELLA</p>
+        <div class="dish-price">1000 DA / 3000 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20thon.glb" alt="SICILIENNE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">SICILIENNE</h3>
+        <p class="dish-desc">SAUCE TOMATE, ANCHOIS,GRUYÉRE,MOZZARELLA,CAPRES</p>
+        <div class="dish-price">1000 DA / 3000 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20crevettes.glb" alt="AU CREVETTES" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">AU CREVETTES</h3>
+        <p class="dish-desc">SAUCE TOMATE, CREVETTES,GRUYÉRE,MOZZARELLA</p>
+        <div class="dish-price">1100 DA / 3100 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20fruit%20de%20mer.glb" alt="AU FRUITS DE MER" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">AU FRUITS DE MER</h3>
+        <p class="dish-desc">SAUCE TOMATE, CREVETTE,POULPE,CALAMAR,SAUMON,GRUYÉRE,MOZZARELLA</p>
+        <div class="dish-price">1300 DA / 3500 DA</div>
+      </div>
+    </article>
+    <article class="dish-card reveal">
+      <div class="dish-3d">
+        <div class="btn-layer">
+          <button class="load-3d-btn">
+            <i class="fas fa-cube"></i>
+            <span>Voir en 3D</span>
+          </button>
+        </div>
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20Burata.glb" alt="BURRATA" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
+          camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
+      </div>
+      <div class="dish-info">
+        <h3 class="dish-name">BURRATA</h3>
+        <p class="dish-desc">SAUCE TOMATE, BURRATA,SAUCE PESTO,BASILIC,TRANCHE DE CHEDDAR</p>
+        <div class="dish-price">1300 DA / 4200 DA</div>
+      </div>
+    </article>
   </div>
 </section>
 
 <section class="menu-section" id="desserts">
+  <div class="section-intro reveal">
+    <p class="eyebrow">— Spécialités Sucrées</p>
+    <h2 class="sec-h2 italic">Spécialités Sucrées</h2>
+  </div>
   <div class="menu-grid">
-
     <article class="dish-card reveal">
       <div class="dish-3d">
         <div class="btn-layer">
           <button class="load-3d-btn">
             <i class="fas fa-cube"></i>
-            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+            <span>Voir en 3D</span>
           </button>
         </div>
-        <model-viewer data-src="" alt="Tiramisu" auto-rotate camera-controls ar
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crepe%203%20chocolat.glb" alt="TROIS CHOCOLATS BELGES" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
           camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
       </div>
       <div class="dish-info">
-        <h3 class="dish-name" data-fr="Tiramisu" data-en="Tiramisu">Tiramisu</h3>
-        <p class="dish-desc" data-fr="Recette traditionnelle italienne." data-en="Traditional Italian recipe.">Recette traditionnelle italienne.</p>
-        <div class="dish-price">650 DA</div>
+        <h3 class="dish-name">TROIS CHOCOLATS BELGES</h3>
+        <p class="dish-desc">NOIR + BLANC + AU LAIT</p>
+        <div class="dish-price">500,00 DA</div>
       </div>
     </article>
-
     <article class="dish-card reveal">
       <div class="dish-3d">
         <div class="btn-layer">
           <button class="load-3d-btn">
             <i class="fas fa-cube"></i>
-            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+            <span>Voir en 3D</span>
           </button>
         </div>
-        <model-viewer data-src="" alt="Crème brûlée" auto-rotate camera-controls ar
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crepe%20beure%20sale%20.glb" alt="CARAMEL BEURRE SALÉ" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
           camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
       </div>
       <div class="dish-info">
-        <h3 class="dish-name" data-fr="Crème brûlée" data-en="Crème brûlée">Crème brûlée</h3>
-        <p class="dish-desc" data-fr="Vanille de Madagascar, caramel craquant." data-en="Madagascar vanilla, crisp caramel.">Vanille de Madagascar, caramel craquant.</p>
-        <div class="dish-price">600 DA</div>
+        <h3 class="dish-name">CARAMEL BEURRE SALÉ</h3>
+        <p class="dish-desc">CRÈME CITRONNÉE + CHOCOLAT BLANC</p>
+        <div class="dish-price">500,00 DA</div>
       </div>
     </article>
-
     <article class="dish-card reveal">
       <div class="dish-3d">
         <div class="btn-layer">
           <button class="load-3d-btn">
             <i class="fas fa-cube"></i>
-            <span data-fr="Voir en 3D" data-en="View in 3D">Voir en 3D</span>
+            <span>Voir en 3D</span>
           </button>
         </div>
-        <model-viewer data-src="" alt="Fondant chocolat" auto-rotate camera-controls ar
+        <model-viewer data-src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crepe%20pistache.glb" alt="CHOCOLAT BELGE PISTACHE" auto-rotate camera-controls ar
+          ar-modes="webxr scene-viewer quick-look" environment-image="neutral"
           camera-orbit="0deg 70deg 2m" exposure="0.85" shadow-intensity="0.6"></model-viewer>
       </div>
       <div class="dish-info">
-        <h3 class="dish-name" data-fr="Fondant au chocolat" data-en="Chocolate fondant">Fondant au chocolat</h3>
-        <p class="dish-desc" data-fr="Cœur coulant, glace vanille." data-en="Molten heart, vanilla ice cream.">Cœur coulant, glace vanille.</p>
-        <div class="dish-price">700 DA</div>
+        <h3 class="dish-name">CHOCOLAT BELGE PISTACHE</h3>
+        <p class="dish-desc">+ MÉLANGE DE FRUITS SECS</p>
+        <div class="dish-price">900,00 DA</div>
       </div>
     </article>
-
   </div>
 </section>
 
 <section class="menu-section" id="boissons">
-  <div class="menu-grid menu-grid--simple">
-
-    <article class="drink-card reveal">
-      <h3 data-fr="Eau minérale" data-en="Mineral water">Eau minérale</h3>
-      <p data-fr="Plate ou pétillante, 75cl" data-en="Still or sparkling, 75cl">Plate ou pétillante, 75cl</p>
-      <div class="dish-price">200 DA</div>
-    </article>
-    <article class="drink-card reveal">
-      <h3 data-fr="Jus pressés" data-en="Fresh juices">Jus pressés</h3>
-      <p data-fr="Orange, citron, pomme" data-en="Orange, lemon, apple">Orange, citron, pomme</p>
-      <div class="dish-price">400 DA</div>
-    </article>
-    <article class="drink-card reveal">
-      <h3 data-fr="Café gourmand" data-en="Gourmet coffee">Café gourmand</h3>
-      <p data-fr="Espresso + 3 mignardises" data-en="Espresso + 3 mini desserts">Espresso + 3 mignardises</p>
-      <div class="dish-price">650 DA</div>
-    </article>
-    <article class="drink-card reveal">
-      <h3 data-fr="Thé à la menthe" data-en="Mint tea">Thé à la menthe</h3>
-      <p data-fr="Tradition algérienne" data-en="Algerian tradition">Tradition algérienne</p>
-      <div class="dish-price">350 DA</div>
-    </article>
-
+  <div class="section-intro reveal">
+    <p class="eyebrow">— Boissons Fraîches</p>
+    <h2 class="sec-h2 italic">Boissons<br><span class="non-italic">Fraîches</span></h2>
+  </div>
+  <div class="drink-category reveal">
+    <h3 class="drink-cat-title">Milkshakes</h3>
+    <div class="drink-grid">
+      <div class="drink-card">
+        <span class="drink-name">Banane</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">450 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Fraise</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">450 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Caramel Beurre Salé</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">500 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Chocolat</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">550 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Banane Chocolat</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">600 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Fraise Chocolat</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">600 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Chocolat Gourmand</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">700 DA</span>
+      </div>
+    </div>
+  </div>
+  <div class="drink-category reveal">
+    <h3 class="drink-cat-title">Iced Coffee</h3>
+    <div class="drink-grid">
+      <div class="drink-card">
+        <span class="drink-name">Frappé Classique</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">400 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Iced Latte</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">400 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Iced Mocha</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">500 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Iced Latte Caramel</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">500 DA</span>
+      </div>
+    </div>
+  </div>
+  <div class="drink-category reveal">
+    <h3 class="drink-cat-title">Mocktails</h3>
+    <div class="drink-grid">
+      <div class="drink-card">
+        <span class="drink-name">Sunrise</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">400 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Pink Lady</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">450 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Citron Menthe</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">450 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Pina Colada</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">500 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Blue Hawaii</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">500 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Bora Bora</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">600 DA</span>
+      </div>
+    </div>
+  </div>
+  <div class="drink-category reveal">
+    <h3 class="drink-cat-title">Jus Pressés</h3>
+    <div class="drink-grid">
+      <div class="drink-card">
+        <span class="drink-name">Jus de Saison</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">400 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Jus de Citron</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">450 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Jus d'Orange</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">500 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Jus Exotique</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">600 DA</span>
+      </div>
+      <div class="drink-card">
+        <span class="drink-name">Jus de Fruits Rouges</span>
+        <span class="drink-dots"></span>
+        <span class="drink-price">600 DA</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- FOOTER (same as index) -->
+
 <footer>
   <div class="ft-grid">
     <div class="ft-col ft-brand">
@@ -299,20 +1678,18 @@
           <span class="lt-gar">Garden</span>
         </span>
       </a>
-      <p class="ft-tag" data-fr="Où chaque plat raconte une histoire en trois dimensions." data-en="Where every dish tells a story in three dimensions.">
-        Où chaque plat raconte une histoire en trois dimensions.
-      </p>
+      <p class="ft-tag">Où chaque plat raconte une histoire en trois dimensions.</p>
       <div class="ft-social">
         <a href="https://www.facebook.com/share/17VvticsRC/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/restaurant_sebs_garden?igsh=MWt3MHo4cnE2cWJ4dA==" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
     <div class="ft-col">
-      <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+      <h4>Navigation</h4>
       <ul>
-        <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-        <li><a href="menu.html" data-fr="Menu" data-en="Menu">Menu</a></li>
-        <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <div class="ft-col">
@@ -325,7 +1702,7 @@
     </div>
   </div>
   <div class="ft-bottom">
-    <p data-fr="© 2024 Seb's Garden — Tous droits réservés." data-en="© 2024 Seb's Garden — All rights reserved.">© 2024 Seb's Garden — Tous droits réservés.</p>
+    <p>© 2024 Seb's Garden — Tous droits réservés.</p>
     <p class="ft-credit">Made by <a href="#" target="_blank">Cliff Agency</a></p>
   </div>
 </footer>
