@@ -38,7 +38,7 @@ img,iframe{display:block;max-width:100%}
 
 /* ── LOGO (inline SVG) ─────────────────────────────────────── */
 .nav-logo{display:flex;align-items:center;gap:12px;line-height:1}
-.logo-mark{width:34px;height:34px;flex-shrink:0;display:block}
+.logo-mark{width:38px;height:46px;flex-shrink:0;display:block}
 .logo-text{display:flex;flex-direction:column;align-items:flex-start;line-height:.9}
 .lt-seb{
   font-family:var(--fserif);font-weight:600;font-size:1.25rem;
@@ -61,7 +61,7 @@ img,iframe{display:block;max-width:100%}
   display:flex;flex-direction:column;align-items:center;gap:20px;
 }
 .intro-mark{
-  width:108px;height:108px;opacity:0;transform:scale(.6) rotate(-12deg);
+  width:200px;height:auto;opacity:0;transform:scale(.6);
   animation:introMarkIn 1s var(--ease) .3s forwards;
   filter:drop-shadow(0 0 24px rgba(212,175,55,.4));
 }
@@ -451,7 +451,7 @@ footer{background:var(--bg3);border-top:1px solid var(--line);padding:4rem 5% 2r
   .ft-brand{grid-column:1 / -1}
   .intro-seb{font-size:3rem}
   .intro-garden{font-size:3.6rem}
-  .intro-mark{width:80px;height:80px}
+  .intro-mark{width:150px}
 }
 @media(max-width:600px){
   .features,.testimonials,.cta-band{padding:5rem 5%}
